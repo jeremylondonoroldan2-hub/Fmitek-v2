@@ -7,33 +7,123 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="practica.html">Fumitek V2</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="practica.html">inicio</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown">Fumigador</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item active" href="agendaFumigador.html">agenda</a></li>
-                <li><a class="dropdown-item" href="infofumigador.html">informacion personal</a></li>
-                <li><a class="dropdown-item" href="#">historial de servicio</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+<header>
+  <nav class="navbar navbar-expand-xl bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Fumitek V2</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+
+          <!-- ===== MÓDULO DE CLIENTE ===== -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button"
+              data-bs-toggle="dropdown">Cliente</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="registro.html">Registrar cliente</a></li>                  <!-- RF-CLI-01 -->
+              <li><a class="dropdown-item" href="informacionPersonal.html">Ver información</a></li>         <!-- RF-CLI-02 -->
+              <li><a class="dropdown-item" href="editarCliente.html">Actualizar información</a></li>        <!-- RF-CLI-03 -->
+              <li><a class="dropdown-item" href="clientesAdmin.html">Eliminar cliente</a></li>              <!-- RF-CLI-04 -->
+              <li><a class="dropdown-item" href="historialCliente.html">Historial de citas</a></li>         <!-- RF-CLI-05 -->
+            </ul>
+          </li>
+
+          <!-- ===== MÓDULO DE FUMIGADOR ===== -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button"
+              data-bs-toggle="dropdown">Fumigador</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="fumigadoresAdmin.html">Registrar fumigador</a></li>        <!-- RF-FUM-01 -->
+              <li><a class="dropdown-item" href="infofumigador.html">Ver información</a></li>               <!-- RF-FUM-02 -->
+              <li><a class="dropdown-item" href="infofumigador.html">Actualizar información</a></li>        <!-- RF-FUM-03 -->
+              <li><a class="dropdown-item" href="historialFumigador.html">Historial de citas</a></li>       <!-- RF-FUM-04 -->
+              <li><a class="dropdown-item" href="historialFumigador.html">Eliminar cita</a></li>            <!-- RF-FUM-05 -->
+              <li><a class="dropdown-item active" href="agendaFumigador.html">Agenda del día</a></li>       <!-- RF-FUM-06 -->
+              <li><a class="dropdown-item" href="misSolicitudes.html">Calificar desempeño</a></li>          <!-- RF-FUM-07 -->
+            </ul>
+          </li>
+
+          <!-- ===== MÓDULO DE SERVICIOS ===== -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button"
+              data-bs-toggle="dropdown">Servicios</a>
+            <ul class="dropdown-menu">
+              <li><h6 class="dropdown-header">Cita de valoración</h6></li>
+              <li><a class="dropdown-item" href="nuevaSolicitudClientes.html">Registrar valoración</a></li> <!-- RF-SER-01 -->
+              <li><a class="dropdown-item" href="misSolicitudes.html">Ver valoración</a></li>               <!-- RF-SER-02 -->
+              <li><a class="dropdown-item" href="misSolicitudes.html">Modificar valoración</a></li>         <!-- RF-SER-03 -->
+              <li><a class="dropdown-item" href="misSolicitudes.html">Eliminar valoración</a></li>          <!-- RF-SER-04 -->
+              <li><hr class="dropdown-divider"></li>
+              <li><h6 class="dropdown-header">Cita de fumigación</h6></li>
+              <li><a class="dropdown-item" href="citasAdmin.html">Registrar fumigación</a></li>             <!-- RF-SER-05 -->
+              <li><a class="dropdown-item" href="citasAdmin.html">Modificar fumigación</a></li>             <!-- RF-SER-06 -->
+              <li><a class="dropdown-item" href="misSolicitudes.html">Eliminar fumigación</a></li>          <!-- RF-SER-07 -->
+              <li><a class="dropdown-item" href="citasAdmin.html">Ver fumigación</a></li>                   <!-- RF-SER-08 -->
+              <li><hr class="dropdown-divider"></li>
+              <li><h6 class="dropdown-header">Otros</h6></li>
+              <li><a class="dropdown-item" href="facturacionAdmin.html">Registrar pago</a></li>             <!-- RF-SER-09 -->
+              <li><a class="dropdown-item" href="misSolicitudes.html">Calificar servicio</a></li>           <!-- RF-SER-10 -->
+              <li><a class="dropdown-item" href="agendaFumigador.html">Registrar novedad</a></li>           <!-- RF-SER-11 -->
+              <li><a class="dropdown-item" href="nuevaSolicitudClientes.html">Solicitar fumigador</a></li>  <!-- RF-SER-12 -->
+            </ul>
+          </li>
+
+          <!-- ===== MÓDULO DE SEGURIDAD ===== -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button"
+              data-bs-toggle="dropdown">Seguridad</a>
+            <ul class="dropdown-menu">
+              <li><h6 class="dropdown-header">Usuarios</h6></li>
+              <li><a class="dropdown-item" href="usuariosAdmin.html">Registrar usuario</a></li>             <!-- RF-SEG-01 -->
+              <li><a class="dropdown-item" href="usuariosAdmin.html">Ver usuarios</a></li>                  <!-- RF-SEG-02 -->
+              <li><a class="dropdown-item" href="usuariosAdmin.html">Editar usuario</a></li>                <!-- RF-SEG-03 -->
+              <li><a class="dropdown-item" href="usuariosAdmin.html">Eliminar usuario</a></li>              <!-- RF-SEG-04 -->
+              <li><a class="dropdown-item" href="usuariosAdmin.html">Deshabilitar usuario</a></li>          <!-- RF-SEG-05 -->
+              <li><hr class="dropdown-divider"></li>
+              <li><h6 class="dropdown-header">Acceso</h6></li>
+              <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>                        <!-- RF-SEG-06 y 09 (captcha) -->
+              <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>                         <!-- RF-SEG-07 -->
+              <li><a class="dropdown-item" href="recuperar.html">Recuperar contraseña</a></li>              <!-- RF-SEG-08 -->
+            </ul>
+          </li>
+
+          <!-- ===== MÓDULO DE AUDITOR ===== -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button"
+              data-bs-toggle="dropdown">Auditor</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="auditoriaAdmin.html">Generar backup</a></li>               <!-- RF-AUD-01 -->
+              <li><a class="dropdown-item" href="auditoriaAdmin.html">Restablecer copia</a></li>            <!-- RF-AUD-02 -->
+              <li><a class="dropdown-item" href="auditoriaAdmin.html">Ver log</a></li>                      <!-- RF-AUD-03 -->
+              <li><a class="dropdown-item" href="auditoriaAdmin.html">Registro de actividad</a></li>        <!-- RF-AUD-04 -->
+              <li><a class="dropdown-item" href="auditoriaAdmin.html">Limpiar log</a></li>                  <!-- RF-AUD-05 -->
+            </ul>
+          </li>
+
+          <!-- ===== ADMINISTRACIÓN (fuera de los requisitos) ===== -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button"
+              data-bs-toggle="dropdown">Administración</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="principalAdmin.html">Panel principal</a></li>
+              <li><a class="dropdown-item" href="inventarioAdmin.html">Inventario</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Sesión -->
+        <a href="login.html" class="btn btn-outline-light btn-sm me-2">Iniciar sesión</a>
+        <a href="login.html" class="btn btn-outline-danger btn-sm">Cerrar sesión</a>
       </div>
-    </nav>
-    </header>
+    </div>
+  </nav>
+</header>
 
 <main>
   <div class="container mt-4 mb-5">
@@ -99,7 +189,6 @@
             <td><span class="badge text-bg-warning">Por confirmar</span></td>
             <td>
               <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
-              <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalRealizada">Marcar realizada</button>
               <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalNovedad">Novedad</button>
             </td>
           </tr>
@@ -212,6 +301,61 @@
   </div>
 </div>
 
+<!-- Modal: registrar novedad -->
+<div class="modal fade" id="modalNovedad" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Registrar novedad</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-3"><strong>Visita:</strong> Ana Restrepo · Calle 10 #5-20 · 2026-10-15, mañana</p>
+
+          <div class="mb-3">
+            <label for="tipoNovedad" class="form-label">Tipo de novedad:</label>
+            <select class="form-select" id="tipoNovedad" name="tipo_novedad">
+              <option value="" selected disabled>Selecciona una opción</option>
+              <option value="ausente">Cliente ausente</option>
+              <option value="acceso">No se permitió el acceso</option>
+              <option value="plaga">La plaga es diferente a la reportada</option>
+              <option value="insumos">Faltan insumos o equipos</option>
+              <option value="riesgo">Condición de riesgo en el lugar</option>
+              <option value="reprogramar">El cliente pidió reprogramar</option>
+              <option value="otra">Otra</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="descripcionNovedad" class="form-label">Descripción:</label>
+            <textarea class="form-control" id="descripcionNovedad" name="descripcion" rows="3"
+              placeholder="Explica qué pasó..."></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="evidenciaNovedad" class="form-label">Foto de evidencia (opcional):</label>
+            <input type="file" class="form-control" id="evidenciaNovedad" name="evidencia" accept="image/*">
+          </div>
+
+          <div class="mb-0">
+            <label for="estadoNovedad" class="form-label">¿Qué pasa con la visita?</label>
+            <select class="form-select" id="estadoNovedad" name="estado_visita">
+              <option value="continua" selected>Se realizó de todas formas</option>
+              <option value="reprogramar">Hay que reprogramarla</option>
+              <option value="cancelar">Se cancela</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-warning" data-bs-target="#exitoNovedad" data-bs-toggle="modal">Registrar novedad</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <!-- Modal: aceptar solicitud -->
 <div class="modal fade" id="modalAceptar" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -277,6 +421,24 @@
   </div>
 </div>
 
+<!-- Mensaje: novedad registrada -->
+<div class="modal fade" id="exitoNovedad" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Novedad registrada</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        La novedad se registró correctamente. El administrador fue notificado.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Mensaje: solicitud aceptada -->
 <div class="modal fade" id="exitoAceptar" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -305,78 +467,6 @@
       </div>
       <div class="modal-body">
         La solicitud fue rechazada. El cliente será notificado.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal: registrar novedad -->
-<div class="modal fade" id="modalNovedad" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <form>
-        <div class="modal-header">
-          <h4 class="modal-title">Registrar novedad</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <p class="mb-3"><strong>Visita:</strong> Ana Restrepo · Calle 10 #5-20 · 2026-10-15, mañana</p>
-
-          <div class="mb-3">
-            <label for="tipoNovedad" class="form-label">Tipo de novedad:</label>
-            <select class="form-select" id="tipoNovedad" name="tipo_novedad">
-              <option value="" selected disabled>Selecciona una opción</option>
-              <option value="ausente">Cliente ausente</option>
-              <option value="acceso">No se permitió el acceso</option>
-              <option value="plaga">La plaga es diferente a la reportada</option>
-              <option value="insumos">Faltan insumos o equipos</option>
-              <option value="riesgo">Condición de riesgo en el lugar</option>
-              <option value="reprogramar">El cliente pidió reprogramar</option>
-              <option value="otra">Otra</option>
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label for="descripcionNovedad" class="form-label">Descripción:</label>
-            <textarea class="form-control" id="descripcionNovedad" name="descripcion" rows="3"
-              placeholder="Explica qué pasó..."></textarea>
-          </div>
-
-          <div class="mb-3">
-            <label for="evidenciaNovedad" class="form-label">Foto de evidencia (opcional):</label>
-            <input type="file" class="form-control" id="evidenciaNovedad" name="evidencia" accept="image/*">
-          </div>
-
-          <div class="mb-0">
-            <label for="estadoNovedad" class="form-label">¿Qué pasa con la visita?</label>
-            <select class="form-select" id="estadoNovedad" name="estado_visita">
-              <option value="continua" selected>Se realizó de todas formas</option>
-              <option value="reprogramar">Hay que reprogramarla</option>
-              <option value="cancelar">Se cancela</option>
-            </select>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-warning" data-bs-target="#exitoNovedad" data-bs-toggle="modal">Registrar novedad</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- Mensaje: novedad registrada -->
-<div class="modal fade" id="exitoNovedad" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Novedad registrada</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        La novedad se registró correctamente. El administrador fue notificado.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
