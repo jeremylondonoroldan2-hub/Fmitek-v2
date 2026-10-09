@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario | Fumitek V2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="principalAdmin.html">Fumitek V2 <span class="badge text-bg-success">Admin</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown">Administrador</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="principalAdmin.html">Página principal</a></li>
+                <li><a class="dropdown-item" href="fumigadoresAdmin.html">Fumigadores</a></li>
+                <li><a class="dropdown-item" href="citasAdmin.html">Gestión de citas</a></li>
+                <li><a class="dropdown-item" href="clientesAdmin.html">Clientes</a></li>
+                <li><a class="dropdown-item active" href="inventarioAdmin.html">Inventario</a></li>
+                <li><a class="dropdown-item" href="facturacionAdmin.html">Facturación</a></li>
+                <li><a class="dropdown-item" href="auditoriaAdmin.html">Auditoría y backup</a></li>
+              </ul>
+            </li>
+          </ul>
+          <a href="practica.html" class="btn btn-outline-light btn-sm">Salir</a>
+        </div>
+      </div>
+    </nav>
+    </header>
+
+<main>
+  <div class="container mt-4 mb-5">
+
+    <div class="d-flex justify-content-between align-items-start mb-4">
+      <div>
+        <h2>Inventario de químicos</h2>
+        <p class="text-muted mb-0">Control de stock, entradas y salidas.</p>
+      </div>
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregar">+ Agregar producto</button>
+    </div>
+
+    <!-- Tarjetas de resumen -->
+    <div class="row g-3 mb-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-success border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Productos</p>
+            <h3 class="mb-0">5</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-danger border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Stock crítico</p>
+            <h3 class="mb-1">2</h3>
+            <small class="text-danger">Requieren reposición</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-warning border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Valor inventario</p>
+            <h3 class="mb-0">$1.8M</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-primary border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Movimientos hoy</p>
+            <h3 class="mb-0">5</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla de productos -->
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h5 class="mb-0">Productos registrados</h5>
+        <div class="input-group" style="max-width: 350px;">
+          <input type="search" class="form-control form-control-sm" placeholder="Buscar producto o estado...">
+          <button class="btn btn-outline-secondary btn-sm" type="button">Buscar</button>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped align-middle mb-0">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Stock actual</th>
+              <th>Stock mín.</th>
+              <th>Precio/unidad</th>
+              <th>Vencimiento</th>
+              <th>Estado</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Cipermetrina 10%</strong></td>
+              <td class="text-danger">2 L</td>
+              <td class="text-muted">10 L</td>
+              <td>$45.000</td>
+              <td class="text-muted">Jun 2027</td>
+              <td><span class="badge text-bg-danger">Crítico</span></td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalReponer">+ Reponer</button>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Fipronil 2.5%</strong></td>
+              <td class="text-warning">5 L</td>
+              <td class="text-muted">10 L</td>
+              <td>$62.000</td>
+              <td class="text-muted">Jun 2027</td>
+              <td><span class="badge text-bg-warning">Bajo</span></td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalReponer">+ Reponer</button>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Deltametrina</strong></td>
+              <td><strong>13 L</strong></td>
+              <td class="text-muted">10 L</td>
+              <td>$38.000</td>
+              <td class="text-muted">Jun 2027</td>
+              <td><span class="badge text-bg-success">Normal</span></td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalReponer">+ Reponer</button>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Clorpirifos</strong></td>
+              <td><strong>20 L</strong></td>
+              <td class="text-muted">10 L</td>
+              <td>$29.000</td>
+              <td class="text-muted">Jun 2027</td>
+              <td><span class="badge text-bg-success">Normal</span></td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalReponer">+ Reponer</button>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Bromadiolona</strong></td>
+              <td><strong>8 Kg</strong></td>
+              <td class="text-muted">10 Kg</td>
+              <td>$55.000</td>
+              <td class="text-muted">Jun 2027</td>
+              <td><span class="badge text-bg-success">Normal</span></td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalReponer">+ Reponer</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ========== MODALES ========== -->
+
+<!-- Modal: reponer producto -->
+<div class="modal fade" id="modalReponer" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Reponer producto</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-3"><strong>Producto:</strong> Cipermetrina 10% · Stock actual: <span class="text-danger">2 L</span></p>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="cantidadReponer" class="form-label">Cantidad a ingresar:</label>
+              <input type="number" class="form-control" id="cantidadReponer" name="cantidad" placeholder="10">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="unidadReponer" class="form-label">Unidad:</label>
+              <select class="form-select" id="unidadReponer" name="unidad">
+                <option value="L" selected>Litros (L)</option>
+                <option value="Kg">Kilogramos (Kg)</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="loteReponer" class="form-label">Lote:</label>
+              <input type="text" class="form-control" id="loteReponer" name="lote" placeholder="L-2026-045">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="vencimientoReponer" class="form-label">Vencimiento:</label>
+              <input type="month" class="form-control" id="vencimientoReponer" name="vencimiento">
+            </div>
+            <div class="col-12 mb-0">
+              <label for="proveedorReponer" class="form-label">Proveedor (opcional):</label>
+              <input type="text" class="form-control" id="proveedorReponer" name="proveedor">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success" data-bs-target="#exitoReponer" data-bs-toggle="modal">Registrar entrada</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: agregar producto -->
+<div class="modal fade" id="modalAgregar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Agregar producto</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="nombreProducto" class="form-label">Nombre del producto:</label>
+            <input type="text" class="form-control" id="nombreProducto" name="nombre" placeholder="Ej: Cipermetrina 10%">
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="stockInicial" class="form-label">Stock inicial:</label>
+              <input type="number" class="form-control" id="stockInicial" name="stock">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="unidadProducto" class="form-label">Unidad:</label>
+              <select class="form-select" id="unidadProducto" name="unidad">
+                <option value="L" selected>Litros (L)</option>
+                <option value="Kg">Kilogramos (Kg)</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="stockMinimo" class="form-label">Stock mínimo:</label>
+              <input type="number" class="form-control" id="stockMinimo" name="stock_minimo">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="precioUnidad" class="form-label">Precio por unidad:</label>
+              <input type="number" class="form-control" id="precioUnidad" name="precio" placeholder="45000">
+            </div>
+            <div class="col-12 mb-0">
+              <label for="vencimientoProducto" class="form-label">Vencimiento:</label>
+              <input type="month" class="form-control" id="vencimientoProducto" name="vencimiento">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success" data-bs-target="#exitoAgregar" data-bs-toggle="modal">Agregar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MENSAJES DE CONFIRMACIÓN ========== -->
+
+<!-- Mensaje: entrada registrada -->
+<div class="modal fade" id="exitoReponer" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Entrada registrada</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        El stock del producto se actualizó correctamente.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mensaje: producto agregado -->
+<div class="modal fade" id="exitoAgregar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Producto agregado</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        El producto se agregó correctamente al inventario.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

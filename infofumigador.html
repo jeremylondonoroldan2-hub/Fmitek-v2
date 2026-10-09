@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información personal | Fumitek V2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="practica.html">Fumitek V2</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="practica.html">inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown">Fumigador</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="agendaFumigador.html">agenda</a></li>
+                <li><a class="dropdown-item active" href="infofumigador.html">informacion personal</a></li>
+                <li><a class="dropdown-item" href="historial fumigador.html">historial de servicio</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </header>
+
+<main>
+  <div class="container mt-4 mb-5">
+    <h2>Información personal</h2>
+    <p class="text-muted">Tus datos y lo que opinan los clientes de tu trabajo.</p>
+
+    <!-- Datos personales -->
+    <div class="table-responsive">
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Zona</th>
+            <th>Cédula</th>
+            <th>Calificación</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Carlos Mejía</td>
+            <td>3001234567</td>
+            <td>carlos.mejia@correo.com</td>
+            <td>Medellín, Itagüí</td>
+            <td>1035945044</td>
+            <td class="text-warning">★ 4.7</td>
+            <td>
+              <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Reseñas -->
+    <h3 class="mt-5">Reseñas</h3>
+    <p class="text-muted">Opiniones de los clientes después de cada servicio.</p>
+
+    <div class="table-responsive">
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Cliente</th>
+            <th>Servicio</th>
+            <th>Calificación</th>
+            <th>Comentario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026-10-01</td>
+            <td>Ana Restrepo</td>
+            <td>Cucarachas</td>
+            <td class="text-warning">★★★★★</td>
+            <td>Muy puntual y explicó todo lo que iba a aplicar.</td>
+          </tr>
+          <tr>
+            <td>2026-09-22</td>
+            <td>Panadería El Trigal</td>
+            <td>Roedores</td>
+            <td class="text-warning">★★★★★</td>
+            <td>Trabajo limpio y rápido.</td>
+          </tr>
+          <tr>
+            <td>2026-09-10</td>
+            <td>Bodegas del Sur</td>
+            <td>Termitas</td>
+            <td class="text-warning">★★★★☆</td>
+            <td>Buen servicio, aunque llegó un poco tarde.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</main>
+
+<!-- ========== MODALES ========== -->
+
+<!-- Modal: editar información -->
+<div class="modal fade" id="modalEditar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Editar información</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="Carlos Mejía">
+          </div>
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono:</label>
+            <input type="tel" class="form-control" id="telefono" name="telefono" value="3001234567">
+          </div>
+          <div class="mb-3">
+            <label for="correo" class="form-label">Correo:</label>
+            <input type="email" class="form-control" id="correo" name="correo" value="carlos.mejia@correo.com">
+          </div>
+          <div class="mb-3">
+            <label for="zona" class="form-label">Zona:</label>
+            <input type="text" class="form-control" id="zona" name="zona" value="Medellín, Itagüí">
+          </div>
+          <div class="mb-0">
+            <label for="cedula" class="form-label">Cédula:</label>
+            <input type="text" class="form-control" id="cedula" name="cedula" value="1035945044" readonly>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-bs-target="#exitoEditar" data-bs-toggle="modal">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- Mensaje: cambios guardados -->
+<div class="modal fade" id="exitoEditar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Cambios guardados</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Tu información se actualizó correctamente.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalEliminar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Eliminar cuenta</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        ¿Estás seguro de que deseas eliminar tu cuenta? Se borrarán tus datos y tus solicitudes. Esta acción no se puede deshacer.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-bs-target="#exitoEliminar" data-bs-toggle="modal">Sí, eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exitoEliminar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Cuenta eliminada</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Tu cuenta fue eliminada correctamente.
+      </div>
+      <div class="modal-footer">
+        <a href="practica.html" class="btn btn-primary">Ir al inicio</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

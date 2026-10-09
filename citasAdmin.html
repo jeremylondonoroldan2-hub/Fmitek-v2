@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de citas | Fumitek V2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="principalAdmin.html">Fumitek V2 <span class="badge text-bg-success">Admin</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown">Administrador</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="principalAdmin.html">Página principal</a></li>
+                <li><a class="dropdown-item" href="fumigadoresAdmin.html">Fumigadores</a></li>
+                <li><a class="dropdown-item active" href="citasAdmin.html">Gestión de citas</a></li>
+                <li><a class="dropdown-item" href="clientesAdmin.html">Clientes</a></li>
+                <li><a class="dropdown-item" href="inventarioAdmin.html">Inventario</a></li>
+                <li><a class="dropdown-item" href="facturacionAdmin.html">Facturación</a></li>
+                <li><a class="dropdown-item" href="auditoriaAdmin.html">Auditoría y backup</a></li>
+              </ul>
+            </li>
+          </ul>
+          <a href="practica.html" class="btn btn-outline-light btn-sm">Salir</a>
+        </div>
+      </div>
+    </nav>
+    </header>
+
+<main>
+  <div class="container mt-4 mb-5">
+
+    <div class="d-flex justify-content-between align-items-start mb-4">
+      <div>
+        <h2>Gestión de citas</h2>
+        <p class="text-muted mb-0">Administra todas las citas del sistema.</p>
+      </div>
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalNueva">+ Nueva cita</button>
+    </div>
+
+    <!-- Tarjetas de resumen -->
+    <div class="row g-3 mb-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-success border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Total</p>
+            <h3 class="mb-0">6</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-primary border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">En curso</p>
+            <h3 class="mb-0">1</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-warning border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Disponibles</p>
+            <h3 class="mb-0">2</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-danger border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Canceladas</p>
+            <h3 class="mb-0">1</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla de citas -->
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h5 class="mb-0">Todas las citas</h5>
+        <div class="input-group" style="max-width: 350px;">
+            <input type="search" class="form-control form-control-sm" placeholder="Buscar por cliente, fumigador, estado...">
+            <button class="btn btn-outline-secondary btn-sm" type="button">Buscar</button>
+        </div>
+    </div>
+      <div class="table-responsive">
+        <table class="table table-striped align-middle mb-0">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Cliente</th>
+              <th>Servicio</th>
+              <th>Fumigador</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Estado</th>
+              <th>Valor</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-muted">#1024</td>
+              <td><strong>Restaurante El Fogón</strong></td>
+              <td>Fumigación cocina</td>
+              <td>Carlos López</td>
+              <td>08 may</td>
+              <td>08:00</td>
+              <td><span class="badge text-bg-success">Completada</span></td>
+              <td><strong>$280.000</strong></td>
+              <td>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-muted">#1023</td>
+              <td><strong>Torres Norte Prop.</strong></td>
+              <td>Valoración inicial</td>
+              <td>Miguel Ríos</td>
+              <td>08 may</td>
+              <td>09:30</td>
+              <td><span class="badge text-bg-success">Completada</span></td>
+              <td><strong>$120.000</strong></td>
+              <td>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-muted">#1022</td>
+              <td><strong>Éxito Sur</strong></td>
+              <td>Fumigación bodegas</td>
+              <td>Carlos López</td>
+              <td>Hoy</td>
+              <td>14:00</td>
+              <td><span class="badge text-bg-primary">En curso</span></td>
+              <td class="text-muted">—</td>
+              <td>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarCita">Editar</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-muted">#1021</td>
+              <td><strong>Hotel Dann Carlton</strong></td>
+              <td>Fumigación habitaciones</td>
+              <td><span class="badge text-bg-light">Sin asignar</span></td>
+              <td>Hoy</td>
+              <td>15:00</td>
+              <td><span class="badge text-bg-warning">Disponible</span></td>
+              <td class="text-muted">—</td>
+              <td>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarCita">Editar</button>
+                <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalAsignar">Asignar</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-muted">#1020</td>
+              <td><strong>Clínica San Rafael</strong></td>
+              <td>Valoración inicial</td>
+              <td><span class="badge text-bg-light">Sin asignar</span></td>
+              <td>Hoy</td>
+              <td>16:30</td>
+              <td><span class="badge text-bg-warning">Disponible</span></td>
+              <td class="text-muted">—</td>
+              <td>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarCita">Editar</button>
+                <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalAsignar">Asignar</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-muted">#1019</td>
+              <td><strong>Bodega Almacenar</strong></td>
+              <td>Fumigación</td>
+              <td>Andrés Patiño</td>
+              <td>07 may</td>
+              <td>10:00</td>
+              <td><span class="badge text-bg-danger">Cancelada</span></td>
+              <td class="text-muted">—</td>
+              <td>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalCancelada">Ver detalles</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ========== MODALES ========== -->
+
+<!-- Modal: detalle de la cita -->
+<div class="modal fade" id="modalDetalle" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Detalle de la cita #1024</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Cliente:</strong> Restaurante El Fogón</p>
+        <p><strong>Teléfono:</strong> 3001234567</p>
+        <p><strong>Dirección:</strong> Calle 10 #5-20</p>
+        <p><strong>Servicio:</strong> Fumigación cocina</p>
+        <p><strong>Fumigador:</strong> Carlos López</p>
+        <p><strong>Fecha y hora:</strong> 08 may, 08:00</p>
+        <p><strong>Estado:</strong> <span class="badge text-bg-success">Completada</span></p>
+        <p class="mb-0"><strong>Valor:</strong> $280.000</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: detalle de cita cancelada -->
+<div class="modal fade" id="modalCancelada" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Cita cancelada #1019</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Cliente:</strong> Bodega Almacenar</p>
+        <p><strong>Servicio:</strong> Fumigación</p>
+        <p><strong>Fumigador:</strong> Andrés Patiño</p>
+        <p><strong>Fecha programada:</strong> 07 may, 10:00</p>
+        <hr>
+        <p><strong>Cancelada por:</strong> Cliente</p>
+        <p><strong>Fecha de cancelación:</strong> 06 may</p>
+        <p class="mb-0"><strong>Motivo:</strong> El local estaba cerrado por inventario.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: asignar fumigador -->
+<div class="modal fade" id="modalAsignar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Asignar fumigador</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Selecciona el fumigador que atenderá esta cita.</p>
+        <label for="fumigadorAsignar" class="form-label">Fumigador:</label>
+        <select class="form-select" id="fumigadorAsignar" name="fumigador">
+          <option value="" selected disabled>Selecciona un fumigador disponible</option>
+          <option value="andres">Andrés Patiño · Zona centro</option>
+          <option value="juan">Juan Flórez · Zona sur</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" data-bs-target="#exitoAsignar" data-bs-toggle="modal">Asignar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: nueva cita -->
+<div class="modal fade" id="modalNueva" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Nueva cita</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="cliente" class="form-label">Cliente:</label>
+              <select class="form-select" id="cliente" name="cliente">
+                <option value="" selected disabled>Selecciona un cliente</option>
+                <option value="fogon">Restaurante El Fogón</option>
+                <option value="dann">Hotel Dann Carlton</option>
+                <option value="rafael">Clínica San Rafael</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="servicio" class="form-label">Servicio:</label>
+              <select class="form-select" id="servicio" name="servicio">
+                <option value="" selected disabled>Selecciona un servicio</option>
+                <option value="valoracion">Valoración inicial</option>
+                <option value="fumigacion">Fumigación</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="fecha" class="form-label">Fecha:</label>
+              <input type="date" class="form-control" id="fecha" name="fecha">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="hora" class="form-label">Hora:</label>
+              <input type="time" class="form-control" id="hora" name="hora">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="fumigadorNueva" class="form-label">Fumigador (opcional):</label>
+              <select class="form-select" id="fumigadorNueva" name="fumigador">
+                <option value="" selected>Sin asignar</option>
+                <option value="andres">Andrés Patiño</option>
+                <option value="juan">Juan Flórez</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="valor" class="form-label">Valor:</label>
+              <input type="number" class="form-control" id="valor" name="valor" placeholder="280000">
+            </div>
+            <div class="col-12 mb-0">
+              <label for="notas" class="form-label">Notas (opcional):</label>
+              <textarea class="form-control" id="notas" name="notas" rows="2"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success" data-bs-target="#exitoNueva" data-bs-toggle="modal">Crear cita</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MENSAJES DE CONFIRMACIÓN ========== -->
+
+<!-- Mensaje: fumigador asignado -->
+<div class="modal fade" id="exitoAsignar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Fumigador asignado</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        La cita se asignó correctamente. El fumigador será notificado.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mensaje: cita creada -->
+<div class="modal fade" id="exitoNueva" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Cita creada</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        La cita se creó correctamente y ya aparece en la lista.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: editar cita -->
+<div class="modal fade" id="modalEditarCita" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Editar cita #1021</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="clienteEditar" class="form-label">Cliente:</label>
+              <input type="text" class="form-control" id="clienteEditar" value="Hotel Dann Carlton" readonly>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="servicioEditar" class="form-label">Servicio:</label>
+              <select class="form-select" id="servicioEditar" name="servicio">
+                <option value="valoracion">Valoración inicial</option>
+                <option value="fumigacion" selected>Fumigación</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="fechaCitaEditar" class="form-label">Fecha:</label>
+              <input type="date" class="form-control" id="fechaCitaEditar" name="fecha" value="2026-05-20">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="horaEditar" class="form-label">Hora:</label>
+              <input type="time" class="form-control" id="horaEditar" name="hora" value="15:00">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="fumigadorEditar" class="form-label">Fumigador:</label>
+              <select class="form-select" id="fumigadorEditar" name="fumigador">
+                <option value="" selected>Sin asignar</option>
+                <option value="carlos">Carlos López</option>
+                <option value="miguel">Miguel Ríos</option>
+                <option value="andres">Andrés Patiño</option>
+                <option value="juan">Juan Flórez</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="estadoEditar" class="form-label">Estado:</label>
+              <select class="form-select" id="estadoEditar" name="estado">
+                <option value="disponible" selected>Disponible</option>
+                <option value="confirmada">Confirmada</option>
+                <option value="en_curso">En curso</option>
+                <option value="cancelada">Cancelada</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-0">
+              <label for="valorEditar" class="form-label">Valor:</label>
+              <input type="number" class="form-control" id="valorEditar" name="valor" placeholder="280000">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-bs-target="#exitoEditarCita" data-bs-toggle="modal">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Mensaje: cita actualizada -->
+<div class="modal fade" id="exitoEditarCita" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Cita actualizada</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        La cita se actualizó correctamente. El cliente y el fumigador serán notificados de los cambios.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

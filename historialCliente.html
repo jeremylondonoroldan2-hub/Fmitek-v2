@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de servicio | Fumitek V2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="practica.html">Fumitek V2</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="practica.html">Inicio</a>
+            </li>
+
+            <!-- Menú: Cliente -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown">Cliente</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="nuevaSolicitudClientes.html">Nueva solicitud</a></li>
+                <li><a class="dropdown-item" href="misSolicitudes.html">Mis solicitudes</a></li>
+                <li><a class="dropdown-item" href="historialCliente.html">Historial de servicio</a></li>
+                <li><a class="dropdown-item" href="informacionPersonal.html">Información personal</a></li>
+              </ul>
+            </li>
+
+            <!-- Menú: Fumigador -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown">Fumigador</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="agendaFumigador.html">Agenda</a></li>
+                <li><a class="dropdown-item active" href="historialFumigador.html">Historial de servicio</a></li>
+                <li><a class="dropdown-item" href="infofumigador.html">Información personal</a></li>
+              </ul>
+            </li>
+
+            <!-- Menú: Administrador -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown">Administrador</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="principalAdmin.html">Página principal</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="fumigadoresAdmin.html">Fumigadores</a></li>
+                <li><a class="dropdown-item" href="citasAdmin.html">Gestión de citas</a></li>
+                <li><a class="dropdown-item" href="clientesAdmin.html">Clientes</a></li>
+                <li><a class="dropdown-item" href="usuariosAdmin.html">Usuarios</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="inventarioAdmin.html">Inventario</a></li>
+                <li><a class="dropdown-item" href="facturacionAdmin.html">Facturación</a></li>
+                <li><a class="dropdown-item" href="auditoriaAdmin.html">Auditoría y backup</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Sesión -->
+          <a href="login.html" class="btn btn-outline-light btn-sm me-2">Iniciar sesión</a>
+          <a href="login.html" class="btn btn-outline-danger btn-sm">Cerrar sesión</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+<main>
+  <div class="container mt-4 mb-5">
+    <h2>Historial de servicio</h2>
+    <p class="text-muted">Servicios que ya realizaste o que fueron cancelados.</p>
+
+    <!-- Buscador -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="search" class="form-control" placeholder="Buscar por fecha, cliente, plaga...">
+          <button class="btn btn-outline-secondary" type="button">Buscar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Cliente</th>
+            <th>Dirección</th>
+            <th>Tipo de lugar</th>
+            <th>Plaga</th>
+            <th>Estado</th>
+            <th>Calificación del cliente</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026-10-01</td>
+            <td>Ana Restrepo</td>
+            <td>Calle 10 #5-20</td>
+            <td>Hogar</td>
+            <td>Cucarachas</td>
+            <td><span class="badge text-bg-secondary">Realizada</span></td>
+            <td class="text-warning">★★★★★</td>
+            <td>
+              <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2026-09-22</td>
+            <td>Panadería El Trigal</td>
+            <td>Carrera 7 #45-12</td>
+            <td>Negocio</td>
+            <td>Roedores</td>
+            <td><span class="badge text-bg-secondary">Realizada</span></td>
+            <td class="text-muted">Sin calificar</td>
+            <td>
+              <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2026-09-05</td>
+            <td>Carlos Gómez</td>
+            <td>Calle 30 #12-45</td>
+            <td>Hogar</td>
+            <td>Hormigas</td>
+            <td><span class="badge text-bg-danger">Cancelada</span></td>
+            <td class="text-muted">—</td>
+            <td>
+              <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalCancelada">Ver detalles</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</main>
+
+<!-- ========== MODALES ========== -->
+
+<!-- Modal: detalle de servicio realizado -->
+<div class="modal fade" id="modalDetalle" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Detalle del servicio</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Cliente:</strong> Ana Restrepo</p>
+        <p><strong>Teléfono:</strong> 3001234567</p>
+        <p><strong>Dirección:</strong> Calle 10 #5-20</p>
+        <p><strong>Fecha y franja:</strong> 2026-10-01, mañana</p>
+        <p><strong>Plaga:</strong> Cucarachas</p>
+        <p><strong>Tus observaciones:</strong> Se aplicó gel en cocina y baños. Revisar en 30 días.</p>
+        <p class="mb-0"><strong>Reseña del cliente:</strong> Muy puntual y explicó todo lo que iba a aplicar.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: detalle de cita cancelada -->
+<div class="modal fade" id="modalCancelada" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Cita cancelada</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Cliente:</strong> Carlos Gómez</p>
+        <p><strong>Dirección:</strong> Calle 30 #12-45</p>
+        <p><strong>Fecha programada:</strong> 2026-09-05, tarde</p>
+        <p><strong>Plaga:</strong> Hormigas</p>
+        <hr>
+        <p><strong>Cancelada por:</strong> Cliente</p>
+        <p><strong>Fecha de cancelación:</strong> 2026-09-04</p>
+        <p class="mb-0"><strong>Motivo:</strong> El cliente no iba a estar en casa ese día.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: eliminar del historial -->
+<div class="modal fade" id="modalEliminar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Eliminar del historial</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        ¿Estás seguro de que deseas eliminar este servicio de tu historial? Esta acción no se puede deshacer.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-bs-target="#exitoEliminar" data-bs-toggle="modal">Sí, eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MENSAJES DE CONFIRMACIÓN ========== -->
+
+<!-- Mensaje: servicio eliminado -->
+<div class="modal fade" id="exitoEliminar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Servicio eliminado</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        El servicio se eliminó de tu historial correctamente.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

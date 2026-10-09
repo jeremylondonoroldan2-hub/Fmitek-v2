@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda | Fumitek V2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="practica.html">Fumitek V2</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="practica.html">inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown">Fumigador</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="agendaFumigador.html">agenda</a></li>
+                <li><a class="dropdown-item" href="infofumigador.html">informacion personal</a></li>
+                <li><a class="dropdown-item" href="#">historial de servicio</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </header>
+
+<main>
+  <div class="container mt-4 mb-5">
+    <h2>Mi agenda</h2>
+    <p class="text-muted">Estas son las visitas que tienes programadas.</p>
+
+    <!-- Barra de búsqueda: agenda -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="search" class="form-control" placeholder="Buscar por fecha, cliente, plaga...">
+          <button class="btn btn-outline-secondary" type="button">Buscar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Franja</th>
+            <th>Cliente</th>
+            <th>Dirección</th>
+            <th>Plaga</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026-10-15</td>
+            <td>Mañana</td>
+            <td>Ana Restrepo</td>
+            <td>Calle 10 #5-20</td>
+            <td>Cucarachas</td>
+            <td><span class="badge text-bg-success">Confirmada</span></td>
+            <td>
+              <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+              <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalRealizada">Marcar realizada</button>
+              <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalNovedad">Novedad</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2026-10-15</td>
+            <td>Tarde</td>
+            <td>Panadería El Trigal</td>
+            <td>Carrera 7 #45-12</td>
+            <td>Roedores</td>
+            <td><span class="badge text-bg-success">Confirmada</span></td>
+            <td>
+              <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+              <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalRealizada">Marcar realizada</button>
+              <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalNovedad">Novedad</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2026-10-16</td>
+            <td>Mañana</td>
+            <td>Bodegas del Sur</td>
+            <td>Zona Industrial Km 5</td>
+            <td>Termitas</td>
+            <td><span class="badge text-bg-warning">Por confirmar</span></td>
+            <td>
+              <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+              <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalRealizada">Marcar realizada</button>
+              <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalNovedad">Novedad</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="mt-5">Solicitudes nuevas</h3>
+    <p class="text-muted">Revisa las solicitudes asignadas y acéptalas o recházalas.</p>
+
+    <!-- Barra de búsqueda: solicitudes -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="search" class="form-control" placeholder="Buscar solicitud...">
+          <button class="btn btn-outline-secondary" type="button">Buscar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th>Fecha preferida</th>
+            <th>Franja</th>
+            <th>Cliente</th>
+            <th>Dirección</th>
+            <th>Plaga</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026-10-20</td>
+            <td>Tarde</td>
+            <td>Carlos Gómez</td>
+            <td>Calle 30 #12-45</td>
+            <td>Hormigas</td>
+            <td>
+              <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+              <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalAceptar">Aceptar</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalRechazar">Rechazar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2026-10-21</td>
+            <td>Mañana</td>
+            <td>Restaurante La Esquina</td>
+            <td>Carrera 50 #20-10</td>
+            <td>Roedores</td>
+            <td>
+              <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+              <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalAceptar">Aceptar</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalRechazar">Rechazar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</main>
+
+<!-- ========== MODALES ========== -->
+
+<!-- Modal: detalle de la visita -->
+<div class="modal fade" id="modalDetalle" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Detalle de la visita</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Cliente:</strong> Ana Restrepo</p>
+        <p><strong>Teléfono:</strong> 3001234567</p>
+        <p><strong>Dirección:</strong> Calle 10 #5-20</p>
+        <p><strong>Tipo de lugar:</strong> Hogar</p>
+        <p><strong>Plaga:</strong> Cucarachas</p>
+        <p><strong>Fecha y franja:</strong> 2026-10-15, mañana</p>
+        <p class="mb-0"><strong>Descripción del cliente:</strong> Se ven en la cocina desde hace dos semanas.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: confirmar visita realizada -->
+<div class="modal fade" id="modalRealizada" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Marcar como realizada</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>¿Confirmas que ya realizaste esta visita?</p>
+        <label for="observaciones" class="form-label">Observaciones (opcional):</label>
+        <textarea class="form-control" id="observaciones" name="observaciones" rows="3"
+          placeholder="Producto aplicado, zonas tratadas, recomendaciones..."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" data-bs-target="#exitoRealizada" data-bs-toggle="modal">Sí, marcar realizada</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: aceptar solicitud -->
+<div class="modal fade" id="modalAceptar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Aceptar solicitud</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        ¿Confirmas que aceptas esta solicitud? Se agregará a tu agenda.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" data-bs-target="#exitoAceptar" data-bs-toggle="modal">Sí, aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: rechazar solicitud -->
+<div class="modal fade" id="modalRechazar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Rechazar solicitud</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>¿Estás seguro de que deseas rechazar esta solicitud?</p>
+        <label for="motivoRechazo" class="form-label">Motivo:</label>
+        <select class="form-select" id="motivoRechazo" name="motivo">
+          <option value="" selected disabled>Selecciona una opción</option>
+          <option value="horario">No tengo disponibilidad en ese horario</option>
+          <option value="zona">Fuera de mi zona de cobertura</option>
+          <option value="otro">Otro motivo</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-bs-target="#exitoRechazar" data-bs-toggle="modal">Sí, rechazar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MENSAJES DE CONFIRMACIÓN ========== -->
+
+<!-- Mensaje: visita realizada -->
+<div class="modal fade" id="exitoRealizada" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Visita realizada</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        La visita se marcó como realizada correctamente.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mensaje: solicitud aceptada -->
+<div class="modal fade" id="exitoAceptar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Solicitud aceptada</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        La solicitud se agregó a tu agenda. El cliente será notificado.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mensaje: solicitud rechazada -->
+<div class="modal fade" id="exitoRechazar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Solicitud rechazada</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        La solicitud fue rechazada. El cliente será notificado.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal: registrar novedad -->
+<div class="modal fade" id="modalNovedad" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Registrar novedad</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-3"><strong>Visita:</strong> Ana Restrepo · Calle 10 #5-20 · 2026-10-15, mañana</p>
+
+          <div class="mb-3">
+            <label for="tipoNovedad" class="form-label">Tipo de novedad:</label>
+            <select class="form-select" id="tipoNovedad" name="tipo_novedad">
+              <option value="" selected disabled>Selecciona una opción</option>
+              <option value="ausente">Cliente ausente</option>
+              <option value="acceso">No se permitió el acceso</option>
+              <option value="plaga">La plaga es diferente a la reportada</option>
+              <option value="insumos">Faltan insumos o equipos</option>
+              <option value="riesgo">Condición de riesgo en el lugar</option>
+              <option value="reprogramar">El cliente pidió reprogramar</option>
+              <option value="otra">Otra</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="descripcionNovedad" class="form-label">Descripción:</label>
+            <textarea class="form-control" id="descripcionNovedad" name="descripcion" rows="3"
+              placeholder="Explica qué pasó..."></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="evidenciaNovedad" class="form-label">Foto de evidencia (opcional):</label>
+            <input type="file" class="form-control" id="evidenciaNovedad" name="evidencia" accept="image/*">
+          </div>
+
+          <div class="mb-0">
+            <label for="estadoNovedad" class="form-label">¿Qué pasa con la visita?</label>
+            <select class="form-select" id="estadoNovedad" name="estado_visita">
+              <option value="continua" selected>Se realizó de todas formas</option>
+              <option value="reprogramar">Hay que reprogramarla</option>
+              <option value="cancelar">Se cancela</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-warning" data-bs-target="#exitoNovedad" data-bs-toggle="modal">Registrar novedad</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Mensaje: novedad registrada -->
+<div class="modal fade" id="exitoNovedad" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Novedad registrada</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        La novedad se registró correctamente. El administrador fue notificado.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

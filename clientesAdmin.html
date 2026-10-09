@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes | Fumitek V2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="principalAdmin.html">Fumitek V2 <span class="badge text-bg-success">Admin</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown">Administrador</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="principalAdmin.html">Página principal</a></li>
+                <li><a class="dropdown-item" href="fumigadoresAdmin.html">Fumigadores</a></li>
+                <li><a class="dropdown-item" href="citasAdmin.html">Gestión de citas</a></li>
+                <li><a class="dropdown-item active" href="clientesAdmin.html">Clientes</a></li>
+                <li><a class="dropdown-item" href="inventarioAdmin.html">Inventario</a></li>
+                <li><a class="dropdown-item" href="facturacionAdmin.html">Facturación</a></li>
+                <li><a class="dropdown-item" href="auditoriaAdmin.html">Auditoría y backup</a></li>
+              </ul>
+            </li>
+          </ul>
+          <a href="practica.html" class="btn btn-outline-light btn-sm">Salir</a>
+        </div>
+      </div>
+    </nav>
+    </header>
+
+<main>
+  <div class="container mt-4 mb-5">
+
+    <div class="d-flex justify-content-between align-items-start mb-4">
+      <div>
+        <h2>Clientes</h2>
+        <p class="text-muted mb-0">Directorio de clientes registrados.</p>
+      </div>
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalNuevo">+ Nuevo cliente</button>
+    </div>
+
+    <!-- Tarjetas de resumen -->
+    <div class="row g-3 mb-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-success border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Total</p>
+            <h3 class="mb-0">134</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-success border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Activos</p>
+            <h3 class="mb-0">118</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-warning border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Nuevos mayo</p>
+            <h3 class="mb-0">3</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-danger border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Con deuda</p>
+            <h3 class="mb-0">6</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Directorio -->
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h5 class="mb-0">Directorio</h5>
+        <div class="input-group" style="max-width: 350px;">
+          <input type="search" class="form-control form-control-sm" placeholder="Buscar por nombre, ciudad, estado...">
+          <button class="btn btn-outline-secondary btn-sm" type="button">Buscar</button>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped align-middle mb-0">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Tipo</th>
+              <th>Teléfono</th>
+              <th>Ciudad</th>
+              <th>Servicios</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Restaurante El Fogón</strong></td>
+              <td>Empresa</td>
+              <td>300 123 4567</td>
+              <td>Medellín</td>
+              <td>1</td>
+              <td><span class="badge text-bg-success">Activo</span></td>
+              <td>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
+                <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Torres Norte Prop.</strong></td>
+              <td>Empresa</td>
+              <td>301 987 6543</td>
+              <td>Medellín</td>
+              <td>5</td>
+              <td><span class="badge text-bg-success">Activo</span></td>
+              <td>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
+                <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Hotel Dann Carlton</strong></td>
+              <td>Empresa</td>
+              <td>604 512 3456</td>
+              <td>Medellín</td>
+              <td>8</td>
+              <td><span class="badge text-bg-success">Activo</span></td>
+              <td>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalles</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
+                <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Bodega Almacenar</strong></td>
+              <td>Empresa</td>
+              <td>302 654 3210</td>
+              <td>Itagüí</td>
+              <td>3</td>
+              <td><span class="badge text-bg-danger">Con deuda</span></td>
+              <td>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDeuda">Ver detalles</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
+                <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ========== MODALES ========== -->
+
+<!-- Modal: detalle del cliente -->
+<div class="modal fade" id="modalDetalle" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Detalle del cliente</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Nombre:</strong> Restaurante El Fogón</p>
+        <p><strong>Tipo:</strong> Empresa</p>
+        <p><strong>NIT / Cédula:</strong> 900123456-7</p>
+        <p><strong>Teléfono:</strong> 300 123 4567</p>
+        <p><strong>Correo:</strong> contacto@elfogon.com</p>
+        <p><strong>Dirección:</strong> Calle 10 #5-20, Medellín</p>
+        <p><strong>Servicios realizados:</strong> 1</p>
+        <p class="mb-0"><strong>Estado:</strong> <span class="badge text-bg-success">Activo</span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: detalle de cliente con deuda -->
+<div class="modal fade" id="modalDeuda" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Detalle del cliente</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Nombre:</strong> Bodega Almacenar</p>
+        <p><strong>Tipo:</strong> Empresa</p>
+        <p><strong>Teléfono:</strong> 302 654 3210</p>
+        <p><strong>Dirección:</strong> Calle 50 #40-12, Itagüí</p>
+        <p><strong>Servicios realizados:</strong> 3</p>
+        <hr>
+        <p><strong>Estado:</strong> <span class="badge text-bg-danger">Con deuda</span></p>
+        <p><strong>Valor pendiente:</strong> <span class="text-danger">$350.000</span></p>
+        <p class="mb-0"><strong>Factura vencida desde:</strong> 15 abr 2026</p>
+      </div>
+      <div class="modal-footer">
+        <a href="facturacionAdmin.html" class="btn btn-outline-primary">Ir a facturación</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: nuevo cliente -->
+<div class="modal fade" id="modalNuevo" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Nuevo cliente</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="tipoNuevo" class="form-label">Tipo:</label>
+            <select class="form-select" id="tipoNuevo" name="tipo">
+              <option value="" selected disabled>Selecciona</option>
+              <option value="persona">Persona</option>
+              <option value="empresa">Empresa</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="documentoNuevo" class="form-label">NIT / Cédula:</label>
+            <input type="text" class="form-control" id="documentoNuevo" name="documento">
+          </div>
+          <div class="mb-3">
+            <label for="nombreNuevo" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="nombreNuevo" name="nombre">
+          </div>
+          <div class="mb-3">
+            <label for="telefonoNuevo" class="form-label">Teléfono:</label>
+            <input type="tel" class="form-control" id="telefonoNuevo" name="telefono">
+          </div>
+          <div class="mb-3">
+            <label for="correoNuevo" class="form-label">Correo:</label>
+            <input type="email" class="form-control" id="correoNuevo" name="correo">
+          </div>
+          <div class="mb-0">
+            <label for="ciudadNuevo" class="form-label">Ciudad:</label>
+            <input type="text" class="form-control" id="ciudadNuevo" name="ciudad">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success" data-bs-target="#exitoNuevo" data-bs-toggle="modal">Registrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: editar cliente -->
+<div class="modal fade" id="modalEditar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Editar cliente</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="nombreEditar" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="nombreEditar" name="nombre" value="Restaurante El Fogón">
+          </div>
+          <div class="mb-3">
+            <label for="telefonoEditar" class="form-label">Teléfono:</label>
+            <input type="tel" class="form-control" id="telefonoEditar" name="telefono" value="300 123 4567">
+          </div>
+          <div class="mb-3">
+            <label for="ciudadEditar" class="form-label">Ciudad:</label>
+            <input type="text" class="form-control" id="ciudadEditar" name="ciudad" value="Medellín">
+          </div>
+          <div class="mb-0">
+            <label for="estadoEditar" class="form-label">Estado:</label>
+            <select class="form-select" id="estadoEditar" name="estado">
+              <option value="activo" selected>Activo</option>
+              <option value="inactivo">Inactivo</option>
+              <option value="deuda">Con deuda</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-bs-target="#exitoEditar" data-bs-toggle="modal">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: eliminar cliente -->
+<div class="modal fade" id="modalEliminar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Eliminar cliente</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        ¿Estás seguro de que deseas eliminar este cliente? Se borrarán sus datos y su historial. Esta acción no se puede deshacer.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-bs-target="#exitoEliminar" data-bs-toggle="modal">Sí, eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MENSAJES DE CONFIRMACIÓN ========== -->
+
+<!-- Mensaje: cliente registrado -->
+<div class="modal fade" id="exitoNuevo" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Cliente registrado</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        El cliente se registró correctamente y ya aparece en el directorio.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mensaje: cambios guardados -->
+<div class="modal fade" id="exitoEditar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Cambios guardados</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        La información del cliente se actualizó correctamente.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mensaje: cliente eliminado -->
+<div class="modal fade" id="exitoEliminar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Cliente eliminado</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        El cliente se eliminó correctamente.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

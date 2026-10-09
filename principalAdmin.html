@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel principal | Fumitek V2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="inicioadmin.html">Fumitek V2 <span class="badge text-bg-success">Admin</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="inicioadmin.html">dashboard</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown">Principal</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="fumigadoresAdmin.html">fumigadores</a></li>
+                <li><a class="dropdown-item" href="citasAdmin.html">gestión de citas</a></li>
+                <li><a class="dropdown-item" href="clientesAdmin.html">clientes</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown">Gestión</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="inventarioAdmin.html">inventario</a></li>
+                <li><a class="dropdown-item" href="facturacionAdmin.html">facturación</a></li>
+                <li><a class="dropdown-item" href="auditoriaAdmin.html">auditoría y backup</a></li>
+              </ul>
+            </li>
+          </ul>
+          <a href="practica.html" class="btn btn-outline-light btn-sm">Salir</a>
+        </div>
+      </div>
+    </nav>
+    </header>
+
+<main>
+  <div class="container mt-4 mb-5">
+    <h2>Panel principal</h2>
+    <p class="text-muted">Miércoles 20 de mayo 2026 · Bienvenido, Jeremy</p>
+
+    <!-- Tarjetas de resumen -->
+    <div class="row g-3 mb-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-success border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Citas hoy</p>
+            <h3 class="mb-1">5</h3>
+            <small class="text-success">2 completadas</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-primary border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Fumigadores activos</p>
+            <h3 class="mb-1">8</h3>
+            <small class="text-primary">1 en campo</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-warning border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Citas disponibles</p>
+            <h3 class="mb-1">2</h3>
+            <small class="text-warning">Sin fumigador asignado</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card border-success border-top border-3 h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1">Ingresos mayo</p>
+            <h3 class="mb-1">$4.200.000</h3>
+            <small class="text-success">+12% vs abril</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Citas del día -->
+      <div class="col-lg-8">
+        <div class="card h-100">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Citas del día</h5>
+            <a href="citasAdmin.html" class="btn btn-success btn-sm">+ Nueva</a>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-striped align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Cliente</th>
+                  <th>Servicio</th>
+                  <th>Fumigador</th>
+                  <th>Hora</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#1024</td>
+                  <td>Restaurante El Fogón</td>
+                  <td>Fumigación cocina</td>
+                  <td>Carlos López</td>
+                  <td>08:00</td>
+                  <td><span class="badge text-bg-success">Completada</span></td>
+                </tr>
+                <tr>
+                  <td>#1023</td>
+                  <td>Torres Norte Prop.</td>
+                  <td>Valoración inicial</td>
+                  <td>Miguel Ríos</td>
+                  <td>09:30</td>
+                  <td><span class="badge text-bg-success">Completada</span></td>
+                </tr>
+                <tr>
+                  <td>#1022</td>
+                  <td>Éxito Sur</td>
+                  <td>Fumigación bodegas</td>
+                  <td>Carlos López</td>
+                  <td>14:00</td>
+                  <td><span class="badge text-bg-primary">En curso</span></td>
+                </tr>
+                <tr>
+                  <td>#1021</td>
+                  <td>Hotel Dann Carlton</td>
+                  <td>Fumigación habitaciones</td>
+                  <td><span class="badge text-bg-light">Sin asignar</span></td>
+                  <td>15:00</td>
+                  <td><span class="badge text-bg-warning">Disponible</span></td>
+                </tr>
+                <tr>
+                  <td>#1020</td>
+                  <td>Clínica San Rafael</td>
+                  <td>Valoración inicial</td>
+                  <td><span class="badge text-bg-light">Sin asignar</span></td>
+                  <td>16:30</td>
+                  <td><span class="badge text-bg-warning">Disponible</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+
+        <!-- Actividad reciente -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="mb-0">Actividad reciente</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <p class="mb-0">Inicio de sesión — Jeremy Londoño (Admin)</p>
+              <small class="text-muted">Seguridad · 01:37 p. m.</small>
+            </li>
+            <li class="list-group-item">
+              <p class="mb-0">Aceptó cita #1022 — Carlos López</p>
+              <small class="text-muted">Citas · 13:50</small>
+            </li>
+            <li class="list-group-item">
+              <p class="mb-0">Agendó cita nueva — El Fogón</p>
+              <small class="text-muted">Citas · 13:10</small>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Inventario crítico -->
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Inventario crítico</h5>
+            <span class="badge text-bg-danger">2 alertas</span>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <span>Cipermetrina 10%</span>
+              <span class="text-danger">2 L</span>
+            </div>
+            <div class="progress mb-3" style="height: 6px;">
+              <div class="progress-bar bg-danger" style="width: 10%;"></div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <span>Fipronil 2.5%</span>
+              <span class="text-warning">5 L</span>
+            </div>
+            <div class="progress mb-3" style="height: 6px;">
+              <div class="progress-bar bg-warning" style="width: 25%;"></div>
+            </div>
+
+            <a href="inventarioAdmin.html" class="btn btn-outline-secondary btn-sm w-100">Ver inventario</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
