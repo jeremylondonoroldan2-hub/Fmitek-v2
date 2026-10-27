@@ -1,0 +1,221 @@
+/* =========================================================
+   FUMITEK · Sistema de botones (prototipo Figma)
+   Uso: <button class="btn fk-azul-1">Texto</button>
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@700&display=swap");
+
+:root {
+    /* Fuentes */
+    --fk-fuente-inter: "Inter", sans-serif;
+    --fk-fuente-montserrat: "Montserrat", sans-serif;
+
+    /* Neutros */
+    --fk-blanco: #FFFFFF;
+    --fk-negro: #000000;
+
+    /* Azul */
+    --fk-azul-claro: #AAD7FF;
+    --fk-azul-claro-64: rgba(170, 215, 255, .64);
+    --fk-azul-texto: #002355;
+    --fk-azul-oscuro: #002D55;
+
+    /* Verde */
+    --fk-verde: #2DC628;
+    --fk-verde-oscuro: #013E00;
+
+    /* Naranja */
+    --fk-naranja: #FF7014;
+    --fk-naranja-claro: #FF914B;
+    --fk-naranja-oscuro: #552707;
+
+    /* Inactivo */
+    --fk-inactivo-fondo: rgba(204, 204, 204, .8);
+    --fk-inactivo-texto: rgba(0, 0, 0, .3);
+
+    /* Sombras */
+    --fk-sombra: inset 0 0 4px 2px rgba(0, 0, 0, .25);
+    --fk-sombra-activa: inset 0 0 4px 2px rgba(0, 0, 0, .25), inset 0 2px 4px rgba(0, 0, 0, .25);
+}
+
+/* ---------- BASE COMÚN ---------- */
+.btn:is(.fk-azul-1, .fk-azul-2, .fk-azul-3,
+        .fk-verde-1, .fk-verde-2, .fk-verde-3,
+        .fk-naranja-1, .fk-naranja-2, .fk-naranja-3) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    box-shadow: var(--fk-sombra);
+    transition: background-color 150ms ease-out,
+                color 150ms ease-out,
+                width 150ms ease-out,
+                height 150ms ease-out,
+                font-size 150ms ease-out,
+                box-shadow 150ms ease-out;
+}
+
+.btn:is(.fk-azul-1, .fk-azul-2, .fk-azul-3,
+        .fk-verde-1, .fk-verde-2, .fk-verde-3,
+        .fk-naranja-1, .fk-naranja-2, .fk-naranja-3):is(:hover, :active, .active) {
+    box-shadow: var(--fk-sombra-activa);
+}
+
+/* ---------- TAMAÑOS ---------- */
+/* Tamaño 1: fijo */
+.btn:is(.fk-azul-1, .fk-verde-1, .fk-naranja-1) {
+    width: 140px;
+    height: 68px;
+}
+
+/* Tamaño 2: crece en activo */
+.btn:is(.fk-azul-2, .fk-verde-2, .fk-naranja-2) {
+    width: 132px;
+    height: 60px;
+}
+
+.btn:is(.fk-azul-2, .fk-verde-2, .fk-naranja-2):is(:hover, :active, .active) {
+    width: 154px;
+    height: 77px;
+}
+
+/* Tamaño 3: se encoge en activo (presionado) */
+.btn:is(.fk-azul-3, .fk-verde-3, .fk-naranja-3) {
+    width: 160px;
+    height: 88px;
+}
+
+.btn:is(.fk-azul-3, .fk-verde-3, .fk-naranja-3):is(:hover, :active, .active) {
+    width: 150px;
+    height: 78px;
+}
+
+/* ---------- AZUL ---------- */
+.btn:is(.fk-azul-1, .fk-azul-2, .fk-azul-3) {
+    font-family: var(--fk-fuente-inter);
+    font-weight: 400;
+    color: var(--fk-azul-texto);
+}
+
+.btn:is(.fk-azul-1, .fk-azul-2, .fk-azul-3):is(:hover, :active, .active) {
+    background-color: var(--fk-azul-oscuro);
+    color: var(--fk-blanco);
+}
+
+/* AZUL 1 */
+.btn.fk-azul-1 {
+    background-color: var(--fk-azul-claro-64);
+}
+
+/* AZUL 2 */
+.btn.fk-azul-2 {
+    background-color: var(--fk-azul-claro);
+}
+
+.btn.fk-azul-2:is(:hover, :active, .active) {
+    font-size: 26px;
+}
+
+/* AZUL 3 */
+.btn.fk-azul-3 {
+    background-color: var(--fk-azul-claro);
+    font-size: 26px;
+}
+
+.btn.fk-azul-3:is(:hover, :active, .active) {
+    font-size: 16px;
+}
+
+/* ---------- VERDE ---------- */
+.btn:is(.fk-verde-1, .fk-verde-2, .fk-verde-3) {
+    font-family: var(--fk-fuente-montserrat);
+    font-weight: 700;
+    background-color: var(--fk-verde);
+    color: var(--fk-azul-texto);
+}
+
+.btn:is(.fk-verde-1, .fk-verde-2, .fk-verde-3):is(:hover, :active, .active) {
+    background-color: var(--fk-verde-oscuro);
+    color: var(--fk-blanco);
+}
+
+/* VERDE 1 */
+.btn.fk-verde-1 {
+    color: var(--fk-negro);
+}
+
+/* VERDE 2 */
+.btn.fk-verde-2:is(:hover, :active, .active) {
+    font-size: 20px;
+}
+
+/* VERDE 3 */
+.btn.fk-verde-3 {
+    font-size: 26px;
+}
+
+.btn.fk-verde-3:is(:hover, :active, .active) {
+    font-size: 22px;
+}
+
+/* ---------- NARANJA ---------- */
+.btn:is(.fk-naranja-1, .fk-naranja-2, .fk-naranja-3) {
+    font-family: var(--fk-fuente-montserrat);
+    font-weight: 700;
+    background-color: var(--fk-blanco);
+    border-color: var(--fk-naranja);
+    color: var(--fk-naranja);
+}
+
+.btn:is(.fk-naranja-1, .fk-naranja-2, .fk-naranja-3):is(:hover, :active, .active) {
+    font-family: var(--fk-fuente-inter);
+    font-weight: 400;
+    background-color: var(--fk-naranja-oscuro);
+    border-color: var(--fk-naranja);
+    color: var(--fk-naranja-claro);
+}
+
+/* NARANJA 1 */
+.btn.fk-naranja-1 {
+    font-size: 20px;
+}
+
+.btn.fk-naranja-1:is(:hover, :active, .active) {
+    border-color: transparent;
+    font-size: 16px;
+}
+
+/* NARANJA 2 */
+.btn.fk-naranja-2:is(:hover, :active, .active) {
+    font-size: 26px;
+}
+
+/* NARANJA 3 */
+.btn.fk-naranja-3 {
+    font-size: 26px;
+}
+
+.btn.fk-naranja-3:is(:hover, :active, .active) {
+    font-size: 16px;
+}
+
+/* ---------- INACTIVO (igual para los 9) ---------- */
+.btn:is(.fk-azul-1, .fk-azul-2, .fk-azul-3,
+        .fk-verde-1, .fk-verde-2, .fk-verde-3,
+        .fk-naranja-1, .fk-naranja-2, .fk-naranja-3):is(:disabled, .disabled) {
+    width: 140px;
+    height: 68px;
+    font-family: var(--fk-fuente-inter);
+    font-weight: 400;
+    font-size: 16px;
+    background-color: var(--fk-inactivo-fondo);
+    border-color: transparent;
+    color: var(--fk-inactivo-texto);
+    box-shadow: var(--fk-sombra);
+    opacity: 1;
+}

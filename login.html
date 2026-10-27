@@ -5,6 +5,352 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión | Fumitek V2</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/botones.css">
+    <style>
+        /* Estética global Fumitek V2 */
+        :root {
+            --fk-negro: #001C45;
+            --fk-oscuro: #002355;
+            --fk-oscuro-activo: #002D55;
+            --fk-primario: #0088FF;
+            --fk-azul-claro: #AAD7FF;
+            --fk-verde: #2DC628;
+            --fk-verde-oscuro: #013E00;
+            --fk-cta: #FF7014;
+            --fk-cta-oscuro: #552707;
+            --fk-fondo: #F4F7FB;
+            --fk-borde: #DDE5F0;
+            --fk-texto: #1E2B3C;
+            --fk-radio: 8px;
+            --fk-transicion: 150ms ease-out;
+
+            --bs-primary: #0088FF;
+            --bs-primary-rgb: 0, 136, 255;
+            --bs-success: #2DC628;
+            --bs-success-rgb: 45, 198, 40;
+            --bs-warning: #FF7014;
+            --bs-warning-rgb: 255, 112, 20;
+            --bs-dark: #001C45;
+            --bs-dark-rgb: 0, 28, 69;
+            --bs-body-font-family: "Inter", sans-serif;
+            --bs-border-radius: 8px;
+        }
+
+        /* Colores claros de Bootstrap: solo fuera del tema oscuro */
+        :root:not([data-bs-theme="dark"]) {
+            --bs-body-bg: #F4F7FB;
+            --bs-body-bg-rgb: 244, 247, 251;
+            --bs-body-color: #1E2B3C;
+            --bs-body-color-rgb: 30, 43, 60;
+            --bs-link-color: #0088FF;
+            --bs-link-color-rgb: 0, 136, 255;
+            --bs-border-color: #DDE5F0;
+        }
+
+        /* Tema oscuro (inicioadmin.html) */
+        [data-bs-theme="dark"] {
+            --fk-fondo: #0B1626;
+            --fk-texto: #E6ECF5;
+            --fk-borde: #1F3350;
+        }
+
+        /* ---------- Tipografía ---------- */
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: var(--fk-fondo);
+        }
+
+        body.bg-light {
+            background-color: var(--fk-fondo) !important;
+        }
+
+        h1, h2, h3, h4, h5, h6,
+        .h1, .h2, .h3, .h4, .h5, .h6,
+        .navbar-brand, .modal-title, .card-title, .dropdown-header {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            color: var(--fk-oscuro);
+        }
+
+        /* ---------- Navbar ---------- */
+        .navbar.bg-dark {
+            background-color: var(--fk-negro) !important;
+            min-height: 80px;
+        }
+
+        .navbar.bg-dark .navbar-brand {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+
+        .navbar.bg-dark .nav-link {
+            font-family: "Inter", sans-serif;
+            font-size: 18px;
+            color: #FFFFFF;
+            transition: color var(--fk-transicion);
+        }
+
+        .navbar.bg-dark .nav-link:hover,
+        .navbar.bg-dark .nav-link.active {
+            color: var(--fk-verde);
+        }
+
+        /* Iniciar sesión */
+        .navbar .btn-outline-light {
+            --bs-btn-color: #FFFFFF;
+            --bs-btn-bg: var(--fk-cta);
+            --bs-btn-border-color: var(--fk-cta);
+            --bs-btn-hover-color: #FFFFFF;
+            --bs-btn-hover-bg: var(--fk-cta-oscuro);
+            --bs-btn-hover-border-color: var(--fk-cta-oscuro);
+            --bs-btn-active-color: #FFFFFF;
+            --bs-btn-active-bg: var(--fk-cta-oscuro);
+            --bs-btn-active-border-color: var(--fk-cta-oscuro);
+        }
+
+        /* Cerrar sesión */
+        .navbar .btn-outline-danger {
+            --bs-btn-color: var(--fk-cta);
+            --bs-btn-bg: transparent;
+            --bs-btn-border-color: var(--fk-cta);
+            --bs-btn-hover-color: #FFFFFF;
+            --bs-btn-hover-bg: var(--fk-cta);
+            --bs-btn-hover-border-color: var(--fk-cta);
+            --bs-btn-active-color: #FFFFFF;
+            --bs-btn-active-bg: var(--fk-cta);
+            --bs-btn-active-border-color: var(--fk-cta);
+        }
+
+        /* ---------- Dropdowns ---------- */
+        .dropdown-menu {
+            --bs-dropdown-border-radius: var(--fk-radio);
+            --bs-dropdown-border-color: var(--fk-borde);
+            --bs-dropdown-link-hover-bg: rgba(0, 136, 255, .1);
+            --bs-dropdown-link-hover-color: var(--fk-primario);
+            --bs-dropdown-link-active-bg: rgba(0, 136, 255, .1);
+            --bs-dropdown-link-active-color: var(--fk-primario);
+            box-shadow: 0 8px 24px rgba(0, 28, 69, .08);
+        }
+
+        .dropdown-header {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--fk-primario);
+        }
+
+        /* ---------- Tarjetas ---------- */
+        .card {
+            --bs-card-border-radius: var(--fk-radio);
+            --bs-card-border-color: var(--fk-borde);
+            box-shadow: 0 2px 8px rgba(0, 28, 69, .06);
+        }
+
+        .card-header {
+            background-color: #FFFFFF;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+        }
+
+        /* ---------- Formularios ---------- */
+        .form-label {
+            font-family: "Inter", sans-serif;
+            font-weight: 600;
+            color: var(--fk-oscuro);
+        }
+
+        .form-control,
+        .form-select {
+            border-radius: var(--fk-radio);
+        }
+
+        .form-control:focus,
+        .form-select:focus,
+        .form-check-input:focus {
+            border-color: var(--fk-primario);
+            box-shadow: 0 0 0 .25rem rgba(0, 136, 255, .18);
+        }
+
+        .form-check-input:checked {
+            background-color: var(--fk-primario);
+            border-color: var(--fk-primario);
+        }
+
+        /* ---------- Tablas ---------- */
+        .table > thead th {
+            background-color: var(--fk-oscuro);
+            color: #FFFFFF;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+        }
+
+        .table-dark {
+            --bs-table-bg: var(--fk-oscuro);
+            --bs-table-color: #FFFFFF;
+            --bs-table-border-color: rgba(255, 255, 255, .15);
+        }
+
+        .table-dark th {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+        }
+
+        .table > tbody > tr:hover > * {
+            --bs-table-bg-state: rgba(0, 136, 255, .06);
+        }
+
+        /* ---------- Modales ---------- */
+        .modal {
+            --bs-modal-border-width: 0;
+            --bs-modal-border-radius: 12px;
+            --bs-modal-inner-border-radius: 12px;
+            --bs-modal-header-border-color: var(--fk-borde);
+            --bs-modal-footer-border-color: var(--fk-borde);
+        }
+
+        .modal-content {
+            box-shadow: 0 20px 48px rgba(0, 28, 69, .25);
+        }
+
+        /* ---------- Badges ---------- */
+        .badge {
+            --bs-badge-border-radius: 999px;
+        }
+
+        .text-bg-success {
+            background-color: var(--fk-verde) !important;
+        }
+
+        /* ---------- Botones Bootstrap (las clases fk-* viven en botones.css) ---------- */
+        .btn-primary, .btn-success, .btn-warning, .btn-secondary,
+        .btn-outline-primary, .btn-outline-success, .btn-outline-warning, .btn-outline-secondary {
+            --bs-btn-border-radius: var(--fk-radio);
+            transition: color var(--fk-transicion),
+                        background-color var(--fk-transicion),
+                        border-color var(--fk-transicion),
+                        box-shadow var(--fk-transicion);
+        }
+
+        .btn-primary {
+            --bs-btn-color: #FFFFFF;
+            --bs-btn-bg: var(--fk-primario);
+            --bs-btn-border-color: var(--fk-primario);
+            --bs-btn-hover-color: #FFFFFF;
+            --bs-btn-hover-bg: var(--fk-oscuro-activo);
+            --bs-btn-hover-border-color: var(--fk-oscuro-activo);
+            --bs-btn-active-color: #FFFFFF;
+            --bs-btn-active-bg: var(--fk-oscuro-activo);
+            --bs-btn-active-border-color: var(--fk-oscuro-activo);
+            --bs-btn-disabled-bg: var(--fk-primario);
+            --bs-btn-disabled-border-color: var(--fk-primario);
+            --bs-btn-focus-shadow-rgb: 0, 136, 255;
+        }
+
+        .btn-success {
+            --bs-btn-color: #FFFFFF;
+            --bs-btn-bg: var(--fk-verde);
+            --bs-btn-border-color: var(--fk-verde);
+            --bs-btn-hover-color: #FFFFFF;
+            --bs-btn-hover-bg: var(--fk-verde-oscuro);
+            --bs-btn-hover-border-color: var(--fk-verde-oscuro);
+            --bs-btn-active-color: #FFFFFF;
+            --bs-btn-active-bg: var(--fk-verde-oscuro);
+            --bs-btn-active-border-color: var(--fk-verde-oscuro);
+            --bs-btn-disabled-bg: var(--fk-verde);
+            --bs-btn-disabled-border-color: var(--fk-verde);
+            --bs-btn-focus-shadow-rgb: 45, 198, 40;
+        }
+
+        .btn-warning {
+            --bs-btn-color: #FFFFFF;
+            --bs-btn-bg: var(--fk-cta);
+            --bs-btn-border-color: var(--fk-cta);
+            --bs-btn-hover-color: #FFFFFF;
+            --bs-btn-hover-bg: var(--fk-cta-oscuro);
+            --bs-btn-hover-border-color: var(--fk-cta-oscuro);
+            --bs-btn-active-color: #FFFFFF;
+            --bs-btn-active-bg: var(--fk-cta-oscuro);
+            --bs-btn-active-border-color: var(--fk-cta-oscuro);
+            --bs-btn-disabled-color: #FFFFFF;
+            --bs-btn-disabled-bg: var(--fk-cta);
+            --bs-btn-disabled-border-color: var(--fk-cta);
+            --bs-btn-focus-shadow-rgb: 255, 112, 20;
+        }
+
+        .btn-secondary {
+            --bs-btn-color: #FFFFFF;
+            --bs-btn-bg: var(--fk-oscuro);
+            --bs-btn-border-color: var(--fk-oscuro);
+            --bs-btn-hover-color: #FFFFFF;
+            --bs-btn-hover-bg: var(--fk-negro);
+            --bs-btn-hover-border-color: var(--fk-negro);
+            --bs-btn-active-color: #FFFFFF;
+            --bs-btn-active-bg: var(--fk-negro);
+            --bs-btn-active-border-color: var(--fk-negro);
+            --bs-btn-disabled-bg: var(--fk-oscuro);
+            --bs-btn-disabled-border-color: var(--fk-oscuro);
+            --bs-btn-focus-shadow-rgb: 0, 35, 85;
+        }
+
+        .btn-outline-primary {
+            --bs-btn-color: var(--fk-primario);
+            --bs-btn-border-color: var(--fk-primario);
+            --bs-btn-hover-color: #FFFFFF;
+            --bs-btn-hover-bg: var(--fk-primario);
+            --bs-btn-hover-border-color: var(--fk-primario);
+            --bs-btn-active-color: #FFFFFF;
+            --bs-btn-active-bg: var(--fk-primario);
+            --bs-btn-active-border-color: var(--fk-primario);
+            --bs-btn-disabled-color: var(--fk-primario);
+            --bs-btn-disabled-border-color: var(--fk-primario);
+            --bs-btn-focus-shadow-rgb: 0, 136, 255;
+        }
+
+        .btn-outline-success {
+            --bs-btn-color: var(--fk-verde);
+            --bs-btn-border-color: var(--fk-verde);
+            --bs-btn-hover-color: #FFFFFF;
+            --bs-btn-hover-bg: var(--fk-verde);
+            --bs-btn-hover-border-color: var(--fk-verde);
+            --bs-btn-active-color: #FFFFFF;
+            --bs-btn-active-bg: var(--fk-verde);
+            --bs-btn-active-border-color: var(--fk-verde);
+            --bs-btn-disabled-color: var(--fk-verde);
+            --bs-btn-disabled-border-color: var(--fk-verde);
+            --bs-btn-focus-shadow-rgb: 45, 198, 40;
+        }
+
+        .btn-outline-warning {
+            --bs-btn-color: var(--fk-cta);
+            --bs-btn-border-color: var(--fk-cta);
+            --bs-btn-hover-color: #FFFFFF;
+            --bs-btn-hover-bg: var(--fk-cta);
+            --bs-btn-hover-border-color: var(--fk-cta);
+            --bs-btn-active-color: #FFFFFF;
+            --bs-btn-active-bg: var(--fk-cta);
+            --bs-btn-active-border-color: var(--fk-cta);
+            --bs-btn-disabled-color: var(--fk-cta);
+            --bs-btn-disabled-border-color: var(--fk-cta);
+            --bs-btn-focus-shadow-rgb: 255, 112, 20;
+        }
+
+        .btn-outline-secondary {
+            --bs-btn-color: var(--fk-oscuro);
+            --bs-btn-border-color: var(--fk-oscuro);
+            --bs-btn-hover-color: #FFFFFF;
+            --bs-btn-hover-bg: var(--fk-oscuro);
+            --bs-btn-hover-border-color: var(--fk-oscuro);
+            --bs-btn-active-color: #FFFFFF;
+            --bs-btn-active-bg: var(--fk-oscuro);
+            --bs-btn-active-border-color: var(--fk-oscuro);
+            --bs-btn-disabled-color: var(--fk-oscuro);
+            --bs-btn-disabled-border-color: var(--fk-oscuro);
+            --bs-btn-focus-shadow-rgb: 0, 35, 85;
+        }
+    </style>
 </head>
 <body class="bg-light">
 
