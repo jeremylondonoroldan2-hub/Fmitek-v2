@@ -3,8 +3,6 @@
    Uso: <button class="btn fk-azul-1">Texto</button>
    ========================================================= */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@700&display=swap");
-
 :root {
     /* Fuentes */
     --fk-fuente-inter: "Inter", sans-serif;
