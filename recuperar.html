@@ -31,7 +31,7 @@
             <h2 class="text-center mb-1">Recuperar contraseña</h2>
             <p class="text-muted text-center mb-4">Escribe el correo con el que te registraste y te enviaremos un enlace para crear una nueva contraseña.</p>
 
-            <form>
+            <form action="login.html">
               <div class="mb-3">
                 <label for="correo" class="form-label">Correo electrónico:</label>
                 <input type="email" class="form-control" id="correo" name="correo" placeholder="nombre@correo.com" required>
@@ -49,7 +49,7 @@
                 <input type="text" class="form-control" id="captcha" name="captcha" placeholder="Código" required>
               </div>
 
-              <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exitoEnviado">
+              <button type="submit" class="btn btn-primary w-100">
                 Enviar enlace
               </button>
             </form>

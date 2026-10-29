@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios | Fumitek V2</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
@@ -46,11 +47,8 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="fumigadoresAdmin.html">Registrar fumigador</a></li>        <!-- RF-FUM-01 -->
               <li><a class="dropdown-item" href="infofumigador.html">Ver información</a></li>               <!-- RF-FUM-02 -->
-              <li><a class="dropdown-item" href="infofumigador.html">Actualizar información</a></li>        <!-- RF-FUM-03 -->
               <li><a class="dropdown-item" href="historialFumigador.html">Historial de citas</a></li>       <!-- RF-FUM-04 -->
-              <li><a class="dropdown-item" href="historialFumigador.html">Eliminar cita</a></li>            <!-- RF-FUM-05 -->
               <li><a class="dropdown-item" href="agendaFumigador.html">Agenda del día</a></li>              <!-- RF-FUM-06 -->
-              <li><a class="dropdown-item" href="misSolicitudes.html">Calificar desempeño</a></li>          <!-- RF-FUM-07 -->
             </ul>
           </li>
 
@@ -60,55 +58,24 @@
               data-bs-toggle="dropdown">Servicios</a>
             <ul class="dropdown-menu">
               <li><h6 class="dropdown-header">Cita de valoración</h6></li>
-              <li><a class="dropdown-item" href="nuevaSolicitudClientes.html">Registrar valoración</a></li> <!-- RF-SER-01 -->
               <li><a class="dropdown-item" href="misSolicitudes.html">Ver valoración</a></li>               <!-- RF-SER-02 -->
-              <li><a class="dropdown-item" href="misSolicitudes.html">Modificar valoración</a></li>         <!-- RF-SER-03 -->
-              <li><a class="dropdown-item" href="misSolicitudes.html">Eliminar valoración</a></li>          <!-- RF-SER-04 -->
               <li><hr class="dropdown-divider"></li>
               <li><h6 class="dropdown-header">Cita de fumigación</h6></li>
-              <li><a class="dropdown-item" href="citasAdmin.html">Registrar fumigación</a></li>             <!-- RF-SER-05 -->
-              <li><a class="dropdown-item" href="citasAdmin.html">Modificar fumigación</a></li>             <!-- RF-SER-06 -->
-              <li><a class="dropdown-item" href="misSolicitudes.html">Eliminar fumigación</a></li>          <!-- RF-SER-07 -->
               <li><a class="dropdown-item" href="citasAdmin.html">Ver fumigación</a></li>                   <!-- RF-SER-08 -->
               <li><hr class="dropdown-divider"></li>
               <li><h6 class="dropdown-header">Otros</h6></li>
               <li><a class="dropdown-item" href="facturacionAdmin.html">Registrar pago</a></li>             <!-- RF-SER-09 -->
-              <li><a class="dropdown-item" href="misSolicitudes.html">Calificar servicio</a></li>           <!-- RF-SER-10 -->
-              <li><a class="dropdown-item" href="agendaFumigador.html">Registrar novedad</a></li>           <!-- RF-SER-11 -->
-              <li><a class="dropdown-item" href="nuevaSolicitudClientes.html">Solicitar fumigador</a></li>  <!-- RF-SER-12 -->
             </ul>
           </li>
 
           <!-- ===== MÓDULO DE SEGURIDAD ===== -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" role="button"
-              data-bs-toggle="dropdown">Seguridad</a>
-            <ul class="dropdown-menu">
-              <li><h6 class="dropdown-header">Usuarios</h6></li>
-              <li><a class="dropdown-item" href="usuariosAdmin.html">Registrar usuario</a></li>             <!-- RF-SEG-01 -->
-              <li><a class="dropdown-item active" href="usuariosAdmin.html">Ver usuarios</a></li>           <!-- RF-SEG-02 -->
-              <li><a class="dropdown-item" href="usuariosAdmin.html">Editar usuario</a></li>                <!-- RF-SEG-03 -->
-              <li><a class="dropdown-item" href="usuariosAdmin.html">Eliminar usuario</a></li>              <!-- RF-SEG-04 -->
-              <li><a class="dropdown-item" href="usuariosAdmin.html">Deshabilitar usuario</a></li>          <!-- RF-SEG-05 -->
-              <li><hr class="dropdown-divider"></li>
-              <li><h6 class="dropdown-header">Acceso</h6></li>
-              <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>                        <!-- RF-SEG-06 y 09 (captcha) -->
-              <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>                         <!-- RF-SEG-07 -->
-              <li><a class="dropdown-item" href="recuperar.html">Recuperar contraseña</a></li>              <!-- RF-SEG-08 -->
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link active" href="usuariosAdmin.html">Usuarios</a>           <!-- RF-SEG-02 -->
           </li>
 
           <!-- ===== MÓDULO DE AUDITOR ===== -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-              data-bs-toggle="dropdown">Auditor</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="auditoriaAdmin.html">Generar backup</a></li>               <!-- RF-AUD-01 -->
-              <li><a class="dropdown-item" href="auditoriaAdmin.html">Restablecer copia</a></li>            <!-- RF-AUD-02 -->
-              <li><a class="dropdown-item" href="auditoriaAdmin.html">Ver log</a></li>                      <!-- RF-AUD-03 -->
-              <li><a class="dropdown-item" href="auditoriaAdmin.html">Registro de actividad</a></li>        <!-- RF-AUD-04 -->
-              <li><a class="dropdown-item" href="auditoriaAdmin.html">Limpiar log</a></li>                  <!-- RF-AUD-05 -->
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="auditoriaAdmin.html">Auditoría</a>          <!-- RF-AUD-01 a 05 -->
           </li>
 
           <!-- ===== ADMINISTRACIÓN (fuera de los requisitos) ===== -->
@@ -123,12 +90,37 @@
         </ul>
 
         <!-- Sesión -->
-        <a href="login.html" class="btn btn-outline-light btn-sm me-2">Iniciar sesión</a>
+        <button type="button" class="btn btn-outline-light btn-sm me-2" data-bs-toggle="modal" data-bs-target="#modalSesion">
+          <i class="bi bi-person-circle"></i> Jeremy Londoño <span class="badge text-bg-primary">Administrador</span>
+        </button>
         <a href="login.html" class="btn btn-outline-danger btn-sm">Cerrar sesión</a>
       </div>
     </div>
   </nav>
 </header>
+
+<!-- Modal de sesión (solo lectura) -->
+<div class="modal fade" id="modalSesion" tabindex="-1" aria-labelledby="modalSesionLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalSesionLabel">Sesión activa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body text-center">
+        <i class="bi bi-person-circle display-4"></i>
+        <h6 class="mt-2 mb-1">Jeremy Londoño</h6>
+        <span class="badge text-bg-primary">Administrador</span>
+        <dl class="row text-start small mt-3 mb-0">
+          <dt class="col-5">Correo</dt>
+          <dd class="col-7">jeremy.londono@fumitek.com</dd>
+          <dt class="col-5">Último acceso</dt>
+          <dd class="col-7">29/10/2026 07:40</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
 
 <main>
   <div class="container mt-4 mb-5">
@@ -182,70 +174,157 @@
       <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
         <h5 class="mb-0">Usuarios registrados</h5>
         <div class="input-group" style="max-width: 350px;">
-          <input type="search" class="form-control form-control-sm" placeholder="Buscar por nombre, correo, rol...">
+          <input type="search" class="form-control form-control-sm" placeholder="Buscar por nombre, correo...">
           <button class="btn btn-outline-secondary btn-sm" type="button">Buscar</button>
         </div>
       </div>
-      <div class="table-responsive">
-        <table class="table table-striped align-middle mb-0">
-          <thead>
-            <tr>
-              <th>Usuario</th>
-              <th>Rol</th>
-              <th>Último acceso</th>
-              <th>Estado</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Jeremy Londoño</strong><br><small class="text-muted">jeremy@fumitek.com</small></td>
-              <td><span class="badge text-bg-dark">Administrador</span></td>
-              <td class="text-muted">Hoy, 13:37</td>
-              <td><span class="badge text-bg-success">Activo</span></td>
-              <td>
-                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Carlos López</strong><br><small class="text-muted">carlos.lopez@correo.com</small></td>
-              <td><span class="badge text-bg-primary">Fumigador</span></td>
-              <td class="text-muted">Hoy, 13:50</td>
-              <td><span class="badge text-bg-success">Activo</span></td>
-              <td>
-                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
-                <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalDeshabilitar">Deshabilitar</button>
-                <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Restaurante El Fogón</strong><br><small class="text-muted">contacto@elfogon.com</small></td>
-              <td><span class="badge text-bg-secondary">Cliente</span></td>
-              <td class="text-muted">Hoy, 13:10</td>
-              <td><span class="badge text-bg-success">Activo</span></td>
-              <td>
-                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
-                <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalDeshabilitar">Deshabilitar</button>
-                <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Pedro Gómez</strong><br><small class="text-muted">pedro.gomez@correo.com</small></td>
-              <td><span class="badge text-bg-primary">Fumigador</span></td>
-              <td class="text-muted">02 may 2026</td>
-              <td><span class="badge text-bg-danger">Deshabilitado</span></td>
-              <td>
-                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
-                <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalHabilitar">Habilitar</button>
-                <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="card-body pb-0">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="tabClientesBtn" data-bs-toggle="tab" data-bs-target="#tabClientes" type="button" role="tab">Clientes</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tabFumigadoresBtn" data-bs-toggle="tab" data-bs-target="#tabFumigadores" type="button" role="tab">Fumigadores</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content">
+
+        <!-- Pestaña: clientes -->
+        <div class="tab-pane fade show active" id="tabClientes" role="tabpanel" aria-labelledby="tabClientesBtn">
+            <div class="table-responsive">
+              <table class="table table-striped align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th>Cliente</th>
+                    <th>Último acceso</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><strong>Restaurante El Fogón</strong><br><small class="text-muted">contacto@elfogon.com</small></td>
+                  <td class="text-muted">Hoy, 13:10</td>
+                  <td><span class="badge text-bg-success">Activo</span></td>
+                  <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalVerCliente">Ver</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarCliente">Editar</button>
+                    <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalDeshabilitar">Deshabilitar</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Torres Norte Prop.</strong><br><small class="text-muted">admin@torresnorte.com</small></td>
+                  <td class="text-muted">Ayer, 17:45</td>
+                  <td><span class="badge text-bg-success">Activo</span></td>
+                  <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalVerCliente">Ver</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarCliente">Editar</button>
+                    <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalDeshabilitar">Deshabilitar</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Hotel Dann Carlton</strong><br><small class="text-muted">mantenimiento@danncarlton.com</small></td>
+                  <td class="text-muted">27 oct 2026</td>
+                  <td><span class="badge text-bg-success">Activo</span></td>
+                  <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalVerCliente">Ver</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarCliente">Editar</button>
+                    <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalDeshabilitar">Deshabilitar</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Bodega Almacenar</strong><br><small class="text-muted">info@almacenar.com</small></td>
+                  <td class="text-muted">02 may 2026</td>
+                  <td><span class="badge text-bg-danger">Deshabilitado</span></td>
+                  <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalVerCliente">Ver</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarCliente">Editar</button>
+                    <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalHabilitar">Habilitar</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+
+        <!-- Pestaña: fumigadores -->
+        <div class="tab-pane fade" id="tabFumigadores" role="tabpanel" aria-labelledby="tabFumigadoresBtn">
+            <div class="table-responsive">
+              <table class="table table-striped align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th>Fumigador</th>
+                    <th>Último acceso</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><strong>Carlos López</strong><br><small class="text-muted">carlos.lopez@correo.com</small></td>
+                  <td class="text-muted">Hoy, 13:50</td>
+                  <td><span class="badge text-bg-success">Activo</span></td>
+                  <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalVerFumigador">Ver</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarFumigador">Editar</button>
+                    <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalDeshabilitar">Deshabilitar</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Miguel Ríos</strong><br><small class="text-muted">miguel.rios@correo.com</small></td>
+                  <td class="text-muted">Hoy, 12:30</td>
+                  <td><span class="badge text-bg-success">Activo</span></td>
+                  <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalVerFumigador">Ver</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarFumigador">Editar</button>
+                    <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalDeshabilitar">Deshabilitar</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Andrés Patiño</strong><br><small class="text-muted">andres.patino@correo.com</small></td>
+                  <td class="text-muted">Hoy, 09:05</td>
+                  <td><span class="badge text-bg-success">Activo</span></td>
+                  <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalVerFumigador">Ver</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarFumigador">Editar</button>
+                    <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalDeshabilitar">Deshabilitar</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Laura Pérez</strong><br><small class="text-muted">laura.perez@correo.com</small></td>
+                  <td class="text-muted">15 sep 2026</td>
+                  <td><span class="badge text-bg-danger">Deshabilitado</span></td>
+                  <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalVerFumigador">Ver</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarFumigador">Editar</button>
+                    <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalHabilitar">Habilitar</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Juan Flórez</strong><br><small class="text-muted">juan.florez@correo.com</small></td>
+                  <td class="text-muted">Ayer, 18:20</td>
+                  <td><span class="badge text-bg-success">Activo</span></td>
+                  <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalVerFumigador">Ver</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarFumigador">Editar</button>
+                    <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalDeshabilitar">Deshabilitar</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+
       </div>
     </div>
 
@@ -254,20 +333,45 @@
 
 <!-- ========== MODALES ========== -->
 
-<!-- Modal: ver usuario -->
-<div class="modal fade" id="modalDetalle" tabindex="-1">
+<!-- Modal: ver cliente -->
+<div class="modal fade" id="modalVerCliente" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Detalle del usuario</h4>
+        <h4 class="modal-title">Detalle del cliente</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Nombre:</strong> Restaurante El Fogón</p>
+        <p><strong>NIT / Cédula:</strong> 900123456-7</p>
+        <p><strong>Correo:</strong> contacto@elfogon.com</p>
+        <p><strong>Teléfono:</strong> 300 123 4567</p>
+        <p><strong>Estado:</strong> <span class="badge text-bg-success">Activo</span></p>
+        <p><strong>Fecha de registro:</strong> 10 feb 2026</p>
+        <p class="mb-0"><strong>Último acceso:</strong> Hoy, 13:10</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: ver fumigador -->
+<div class="modal fade" id="modalVerFumigador" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Detalle del fumigador</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
         <p><strong>Nombre:</strong> Carlos López</p>
-        <p><strong>Documento:</strong> 1035945044</p>
+        <p><strong>Cédula:</strong> 1035945044</p>
         <p><strong>Correo:</strong> carlos.lopez@correo.com</p>
         <p><strong>Teléfono:</strong> 3001234567</p>
-        <p><strong>Rol:</strong> <span class="badge text-bg-primary">Fumigador</span></p>
+        <p><strong>Zona:</strong> Norte</p>
+        <p><strong>Cargo:</strong> Técnico senior</p>
         <p><strong>Estado:</strong> <span class="badge text-bg-success">Activo</span></p>
         <p><strong>Fecha de registro:</strong> 15 ene 2026</p>
         <p class="mb-0"><strong>Último acceso:</strong> Hoy, 13:50</p>
@@ -291,7 +395,7 @@
         <div class="modal-body">
           <div class="mb-3">
             <label for="rolNuevo" class="form-label">Rol:</label>
-            <select class="form-select" id="rolNuevo" name="rol">
+            <select class="form-select" id="rolNuevo" name="rol" required>
               <option value="" selected disabled>Selecciona un rol</option>
               <option value="admin">Administrador</option>
               <option value="fumigador">Fumigador</option>
@@ -300,23 +404,23 @@
           </div>
           <div class="mb-3">
             <label for="documentoNuevo" class="form-label">Documento:</label>
-            <input type="text" class="form-control" id="documentoNuevo" name="documento">
+            <input type="text" class="form-control" id="documentoNuevo" name="documento" required>
           </div>
           <div class="mb-3">
             <label for="nombreNuevo" class="form-label">Nombre completo:</label>
-            <input type="text" class="form-control" id="nombreNuevo" name="nombre">
+            <input type="text" class="form-control" id="nombreNuevo" name="nombre" required>
           </div>
           <div class="mb-3">
             <label for="correoNuevo" class="form-label">Correo:</label>
-            <input type="email" class="form-control" id="correoNuevo" name="correo">
+            <input type="email" class="form-control" id="correoNuevo" name="correo" required>
           </div>
           <div class="mb-3">
             <label for="telefonoNuevo" class="form-label">Teléfono:</label>
-            <input type="tel" class="form-control" id="telefonoNuevo" name="telefono">
+            <input type="tel" class="form-control" id="telefonoNuevo" name="telefono" required>
           </div>
           <div class="mb-0">
             <label for="contrasenaNuevo" class="form-label">Contraseña temporal:</label>
-            <input type="password" class="form-control" id="contrasenaNuevo" name="contrasena">
+            <input type="password" class="form-control" id="contrasenaNuevo" name="contrasena" required>
             <div class="form-text">El usuario deberá cambiarla en su primer inicio de sesión.</div>
           </div>
         </div>
@@ -329,35 +433,78 @@
   </div>
 </div>
 
-<!-- Modal: editar usuario -->
-<div class="modal fade" id="modalEditar" tabindex="-1">
+<!-- Modal: editar cliente -->
+<div class="modal fade" id="modalEditarCliente" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <form>
         <div class="modal-header">
-          <h4 class="modal-title">Editar usuario</h4>
+          <h4 class="modal-title">Editar cliente</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
           <div class="mb-3">
-            <label for="nombreEditar" class="form-label">Nombre completo:</label>
-            <input type="text" class="form-control" id="nombreEditar" name="nombre" value="Carlos López">
+            <label for="nombreEditarCliente" class="form-label">Nombre o razón social:</label>
+            <input type="text" class="form-control" id="nombreEditarCliente" name="nombre" value="Restaurante El Fogón" required>
           </div>
           <div class="mb-3">
-            <label for="correoEditar" class="form-label">Correo:</label>
-            <input type="email" class="form-control" id="correoEditar" name="correo" value="carlos.lopez@correo.com">
-          </div>
-          <div class="mb-3">
-            <label for="telefonoEditar" class="form-label">Teléfono:</label>
-            <input type="tel" class="form-control" id="telefonoEditar" name="telefono" value="3001234567">
+            <label for="correoEditarCliente" class="form-label">Correo:</label>
+            <input type="email" class="form-control" id="correoEditarCliente" name="correo" value="contacto@elfogon.com" required>
           </div>
           <div class="mb-0">
-            <label for="rolEditar" class="form-label">Rol:</label>
-            <select class="form-select" id="rolEditar" name="rol">
-              <option value="admin">Administrador</option>
-              <option value="fumigador" selected>Fumigador</option>
-              <option value="cliente">Cliente</option>
-            </select>
+            <label for="telefonoEditarCliente" class="form-label">Teléfono:</label>
+            <input type="tel" class="form-control" id="telefonoEditarCliente" name="telefono" value="300 123 4567" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-bs-target="#exitoEditar" data-bs-toggle="modal">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: editar fumigador -->
+<div class="modal fade" id="modalEditarFumigador" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Editar fumigador</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="nombreEditarFumigador" class="form-label">Nombre completo:</label>
+            <input type="text" class="form-control" id="nombreEditarFumigador" name="nombre" value="Carlos López" required>
+          </div>
+          <div class="mb-3">
+            <label for="correoEditarFumigador" class="form-label">Correo:</label>
+            <input type="email" class="form-control" id="correoEditarFumigador" name="correo" value="carlos.lopez@correo.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="telefonoEditarFumigador" class="form-label">Teléfono:</label>
+            <input type="tel" class="form-control" id="telefonoEditarFumigador" name="telefono" value="3001234567" required>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-0">
+              <label for="zonaEditarFumigador" class="form-label">Zona:</label>
+              <select class="form-select" id="zonaEditarFumigador" name="zona" required>
+                <option value="" disabled>Selecciona una opción</option>
+                <option value="norte" selected>Norte</option>
+                <option value="sur">Sur</option>
+                <option value="centro">Centro</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-0">
+              <label for="cargoEditarFumigador" class="form-label">Cargo:</label>
+              <select class="form-select" id="cargoEditarFumigador" name="cargo" required>
+                <option value="" disabled>Selecciona una opción</option>
+                <option value="tecnico">Técnico</option>
+                <option value="senior" selected>Técnico senior</option>
+              </select>
+            </div>
           </div>
         </div>
         <div class="modal-footer">

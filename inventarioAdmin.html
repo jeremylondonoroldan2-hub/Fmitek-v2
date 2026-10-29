@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventario | Fumitek V2</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
@@ -46,11 +47,8 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="fumigadoresAdmin.html">Registrar fumigador</a></li>        <!-- RF-FUM-01 -->
               <li><a class="dropdown-item" href="infofumigador.html">Ver información</a></li>               <!-- RF-FUM-02 -->
-              <li><a class="dropdown-item" href="infofumigador.html">Actualizar información</a></li>        <!-- RF-FUM-03 -->
               <li><a class="dropdown-item" href="historialFumigador.html">Historial de citas</a></li>       <!-- RF-FUM-04 -->
-              <li><a class="dropdown-item" href="historialFumigador.html">Eliminar cita</a></li>            <!-- RF-FUM-05 -->
               <li><a class="dropdown-item" href="agendaFumigador.html">Agenda del día</a></li>              <!-- RF-FUM-06 -->
-              <li><a class="dropdown-item" href="misSolicitudes.html">Calificar desempeño</a></li>          <!-- RF-FUM-07 -->
             </ul>
           </li>
 
@@ -60,55 +58,24 @@
               data-bs-toggle="dropdown">Servicios</a>
             <ul class="dropdown-menu">
               <li><h6 class="dropdown-header">Cita de valoración</h6></li>
-              <li><a class="dropdown-item" href="nuevaSolicitudClientes.html">Registrar valoración</a></li> <!-- RF-SER-01 -->
               <li><a class="dropdown-item" href="misSolicitudes.html">Ver valoración</a></li>               <!-- RF-SER-02 -->
-              <li><a class="dropdown-item" href="misSolicitudes.html">Modificar valoración</a></li>         <!-- RF-SER-03 -->
-              <li><a class="dropdown-item" href="misSolicitudes.html">Eliminar valoración</a></li>          <!-- RF-SER-04 -->
               <li><hr class="dropdown-divider"></li>
               <li><h6 class="dropdown-header">Cita de fumigación</h6></li>
-              <li><a class="dropdown-item" href="citasAdmin.html">Registrar fumigación</a></li>             <!-- RF-SER-05 -->
-              <li><a class="dropdown-item" href="citasAdmin.html">Modificar fumigación</a></li>             <!-- RF-SER-06 -->
-              <li><a class="dropdown-item" href="misSolicitudes.html">Eliminar fumigación</a></li>          <!-- RF-SER-07 -->
               <li><a class="dropdown-item" href="citasAdmin.html">Ver fumigación</a></li>                   <!-- RF-SER-08 -->
               <li><hr class="dropdown-divider"></li>
               <li><h6 class="dropdown-header">Otros</h6></li>
               <li><a class="dropdown-item" href="facturacionAdmin.html">Registrar pago</a></li>             <!-- RF-SER-09 -->
-              <li><a class="dropdown-item" href="misSolicitudes.html">Calificar servicio</a></li>           <!-- RF-SER-10 -->
-              <li><a class="dropdown-item" href="agendaFumigador.html">Registrar novedad</a></li>           <!-- RF-SER-11 -->
-              <li><a class="dropdown-item" href="nuevaSolicitudClientes.html">Solicitar fumigador</a></li>  <!-- RF-SER-12 -->
             </ul>
           </li>
 
           <!-- ===== MÓDULO DE SEGURIDAD ===== -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-              data-bs-toggle="dropdown">Seguridad</a>
-            <ul class="dropdown-menu">
-              <li><h6 class="dropdown-header">Usuarios</h6></li>
-              <li><a class="dropdown-item" href="usuariosAdmin.html">Registrar usuario</a></li>             <!-- RF-SEG-01 -->
-              <li><a class="dropdown-item" href="usuariosAdmin.html">Ver usuarios</a></li>                  <!-- RF-SEG-02 -->
-              <li><a class="dropdown-item" href="usuariosAdmin.html">Editar usuario</a></li>                <!-- RF-SEG-03 -->
-              <li><a class="dropdown-item" href="usuariosAdmin.html">Eliminar usuario</a></li>              <!-- RF-SEG-04 -->
-              <li><a class="dropdown-item" href="usuariosAdmin.html">Deshabilitar usuario</a></li>          <!-- RF-SEG-05 -->
-              <li><hr class="dropdown-divider"></li>
-              <li><h6 class="dropdown-header">Acceso</h6></li>
-              <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>                        <!-- RF-SEG-06 y 09 (captcha) -->
-              <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>                         <!-- RF-SEG-07 -->
-              <li><a class="dropdown-item" href="recuperar.html">Recuperar contraseña</a></li>              <!-- RF-SEG-08 -->
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="usuariosAdmin.html">Usuarios</a>                  <!-- RF-SEG-02 -->
           </li>
 
           <!-- ===== MÓDULO DE AUDITOR ===== -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-              data-bs-toggle="dropdown">Auditor</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="auditoriaAdmin.html">Generar backup</a></li>               <!-- RF-AUD-01 -->
-              <li><a class="dropdown-item" href="auditoriaAdmin.html">Restablecer copia</a></li>            <!-- RF-AUD-02 -->
-              <li><a class="dropdown-item" href="auditoriaAdmin.html">Ver log</a></li>                      <!-- RF-AUD-03 -->
-              <li><a class="dropdown-item" href="auditoriaAdmin.html">Registro de actividad</a></li>        <!-- RF-AUD-04 -->
-              <li><a class="dropdown-item" href="auditoriaAdmin.html">Limpiar log</a></li>                  <!-- RF-AUD-05 -->
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="auditoriaAdmin.html">Auditoría</a>          <!-- RF-AUD-01 a 05 -->
           </li>
 
           <!-- ===== ADMINISTRACIÓN (fuera de los requisitos) ===== -->
@@ -123,12 +90,37 @@
         </ul>
 
         <!-- Sesión -->
-        <a href="login.html" class="btn btn-outline-light btn-sm me-2">Iniciar sesión</a>
+        <button type="button" class="btn btn-outline-light btn-sm me-2" data-bs-toggle="modal" data-bs-target="#modalSesion">
+          <i class="bi bi-person-circle"></i> Jeremy Londoño <span class="badge text-bg-primary">Administrador</span>
+        </button>
         <a href="login.html" class="btn btn-outline-danger btn-sm">Cerrar sesión</a>
       </div>
     </div>
   </nav>
 </header>
+
+<!-- Modal de sesión (solo lectura) -->
+<div class="modal fade" id="modalSesion" tabindex="-1" aria-labelledby="modalSesionLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalSesionLabel">Sesión activa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body text-center">
+        <i class="bi bi-person-circle display-4"></i>
+        <h6 class="mt-2 mb-1">Jeremy Londoño</h6>
+        <span class="badge text-bg-primary">Administrador</span>
+        <dl class="row text-start small mt-3 mb-0">
+          <dt class="col-5">Correo</dt>
+          <dd class="col-7">jeremy.londono@fumitek.com</dd>
+          <dt class="col-5">Último acceso</dt>
+          <dd class="col-7">29/10/2026 07:40</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
 
 <main>
   <div class="container mt-4 mb-5">
@@ -280,22 +272,23 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="cantidadReponer" class="form-label">Cantidad a ingresar:</label>
-              <input type="number" class="form-control" id="cantidadReponer" name="cantidad" placeholder="10">
+              <input type="number" class="form-control" id="cantidadReponer" name="cantidad" placeholder="10" required>
             </div>
             <div class="col-md-6 mb-3">
               <label for="unidadReponer" class="form-label">Unidad:</label>
-              <select class="form-select" id="unidadReponer" name="unidad">
+              <select class="form-select" id="unidadReponer" name="unidad" required>
+                <option value="" disabled>Selecciona una opción</option>
                 <option value="L" selected>Litros (L)</option>
                 <option value="Kg">Kilogramos (Kg)</option>
               </select>
             </div>
             <div class="col-md-6 mb-3">
               <label for="loteReponer" class="form-label">Lote:</label>
-              <input type="text" class="form-control" id="loteReponer" name="lote" placeholder="L-2026-045">
+              <input type="text" class="form-control" id="loteReponer" name="lote" placeholder="L-2026-045" required>
             </div>
             <div class="col-md-6 mb-3">
               <label for="vencimientoReponer" class="form-label">Vencimiento:</label>
-              <input type="month" class="form-control" id="vencimientoReponer" name="vencimiento">
+              <input type="month" class="form-control" id="vencimientoReponer" name="vencimiento" required>
             </div>
             <div class="col-12 mb-0">
               <label for="proveedorReponer" class="form-label">Proveedor (opcional):</label>
@@ -324,31 +317,32 @@
         <div class="modal-body">
           <div class="mb-3">
             <label for="nombreProducto" class="form-label">Nombre del producto:</label>
-            <input type="text" class="form-control" id="nombreProducto" name="nombre" placeholder="Ej: Cipermetrina 10%">
+            <input type="text" class="form-control" id="nombreProducto" name="nombre" placeholder="Ej: Cipermetrina 10%" required>
           </div>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="stockInicial" class="form-label">Stock inicial:</label>
-              <input type="number" class="form-control" id="stockInicial" name="stock">
+              <input type="number" class="form-control" id="stockInicial" name="stock" required>
             </div>
             <div class="col-md-6 mb-3">
               <label for="unidadProducto" class="form-label">Unidad:</label>
-              <select class="form-select" id="unidadProducto" name="unidad">
+              <select class="form-select" id="unidadProducto" name="unidad" required>
+                <option value="" disabled>Selecciona una opción</option>
                 <option value="L" selected>Litros (L)</option>
                 <option value="Kg">Kilogramos (Kg)</option>
               </select>
             </div>
             <div class="col-md-6 mb-3">
               <label for="stockMinimo" class="form-label">Stock mínimo:</label>
-              <input type="number" class="form-control" id="stockMinimo" name="stock_minimo">
+              <input type="number" class="form-control" id="stockMinimo" name="stock_minimo" required>
             </div>
             <div class="col-md-6 mb-3">
               <label for="precioUnidad" class="form-label">Precio por unidad:</label>
-              <input type="number" class="form-control" id="precioUnidad" name="precio" placeholder="45000">
+              <input type="number" class="form-control" id="precioUnidad" name="precio" placeholder="45000" required>
             </div>
             <div class="col-12 mb-0">
               <label for="vencimientoProducto" class="form-label">Vencimiento:</label>
-              <input type="month" class="form-control" id="vencimientoProducto" name="vencimiento">
+              <input type="month" class="form-control" id="vencimientoProducto" name="vencimiento" required>
             </div>
           </div>
         </div>
